@@ -9,14 +9,14 @@ const Menu = ({ showMenu, close }) => {
         <div onClick={close}>
           <Link
             className='tracked hover-black dark-gray lato ttu link'
-            to='/about'
+            to='/menu'
           >
-            About
+            Menu
           </Link>
         </div>
         <div className='mt3' onClick={close}>
           <Link className='tracked hover-black dark-gray lato ttu link' to='/'>
-            Work
+            Home
           </Link>
         </div>
       </div>
