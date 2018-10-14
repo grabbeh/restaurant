@@ -41,25 +41,25 @@ class Header extends Component {
                   Options
                 </div>
             </div>}
-          <div className=' mt3 f4 dn dib-ns fr'>
+          <div className=' mt3 f3 dn dib-ns fr'>
             <Link
               style={{ outline: 0 }}
               className={cn(
-                activePath === '/menu' && 'dark-gray',
-                activePath !== '/menu' && 'gray',
+                activePath === '/menu' && 'b',
+                'dark-gray',
                 'hover-black',
                 'fr',
                 'link'
               )}
               to='/menu'
             >
-              menu
+              Menu
             </Link>
             <Link
               style={{ outline: 0 }}
               className={cn(
-                activePath === '/' && 'dark-gray',
-                activePath !== '/' && 'gray',
+                activePath === '/' && 'b',
+                'dark-gray',
                 'hover-black',
                 'fr',
                 'link',
@@ -67,7 +67,7 @@ class Header extends Component {
               )}
               to='/'
             >
-              home
+              Home
             </Link>
           </div>
 

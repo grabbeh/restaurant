@@ -28,14 +28,14 @@ const index = ({ location }) => {
               GOODS OFFICE
             </Text>
           </Box>
-          <Box mt={3} width={[0.7, 0.4]}>
+          <Box mt={3} width={[0.9, 0.4]}>
             <Text lineHeight='1.5' fontSize={3} transform={3}>
               We serve brunch, a selection of cakes & pastries, salads & sandwiches all day, and small plates in the evening
             </Text>
           </Box>
         </Box>
         <Box className='concrete' position='relative' height={300} />
-        <Box height={300} className='concrete' pb={5} pt={[3, 5]} mb={[4, 0]}>
+        <Box height={300} className='concrete' pb={5} pt={[5, 5]} mb={0}>
           <Flex justifyContent='flex-end' flexWrap='wrap'>
             <Box className='concrete' pl={[3, 0]} width={[1, 1 / 4]} bg='white'>
               <Text fontSize={3} fontWeight='bold'>
