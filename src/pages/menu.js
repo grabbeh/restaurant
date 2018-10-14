@@ -12,7 +12,7 @@ const index = ({ data: { allContentfulMenuItem: { edges } }, location }) => {
   })
   return (
     <Layout location={location}>
-      <Box height='100vh' bg='gold' pt={4}>
+      <Box height='100vh' bg='gold' px={3} pt={4}>
         <Flex flex='flex-wrap' justifyContent='center'>
           <Box>
             {menuItems.map(i => {
