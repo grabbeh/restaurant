@@ -5,7 +5,7 @@ import cn from 'classnames'
 const Menu = ({ showMenu, close }) => {
   return (
     <div className={cn(!showMenu && 'dn')}>
-      <div className='f3 mt5 tc'>
+      <div className='w-100 f3 mt5 tc'>
         <div onClick={close}>
           <Link
             className='hover-black dark-gray link'
