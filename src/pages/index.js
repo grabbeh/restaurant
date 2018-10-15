@@ -7,15 +7,15 @@ import { Flex } from '../components/Flex'
 const index = ({ location }) => {
   return (
     <Layout location={location}>
-      <Box position='relative'>
+      <Box maxWidth={1200} position='relative'>
         <Box
           position='absolute'
           transform={3}
           className='w-100'
           bg='gold'
-          height={[330, 500]}
+          height={[400, 450, 500]}
           zIndex={1}
-          pl={[3, 4]}
+          px={[3, 3, 4]}
         >
           <Box width={[1]} mt={[4, 5]}>
             <Text
@@ -28,14 +28,14 @@ const index = ({ location }) => {
               GOODS OFFICE
             </Text>
           </Box>
-          <Box mt={3} width={[0.9, 0.4]}>
+          <Box mt={3} width={[0.9, 0.7, 0.4]}>
             <Text lineHeight='1.5' fontSize={3} transform={3}>
               We serve brunch, a selection of cakes & pastries, salads & sandwiches all day, and small plates in the evening
             </Text>
           </Box>
         </Box>
         <Box className='concrete' position='relative' height={300} />
-        <Box height={300} className='concrete' pb={5} pt={[5, 5]} mb={0}>
+        <Box height={300} className='concrete' pb={5} pt={[6, 5]} mb={0}>
           <Flex justifyContent='flex-end' flexWrap='wrap'>
             <Box className='concrete' pl={[3, 0]} width={[1, 1 / 4]} bg='white'>
               <Text fontSize={3} fontWeight='bold'>
