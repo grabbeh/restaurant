@@ -7,7 +7,7 @@ import { Flex } from '../components/Flex'
 const index = ({ location }) => {
   return (
     <Layout location={location}>
-      <Box maxWidth={1200} position='relative'>
+      <Box position='relative'>
         <Box
           position='absolute'
           transform={3}
@@ -17,7 +17,7 @@ const index = ({ location }) => {
           zIndex={1}
           px={[3, 3, 4]}
         >
-          <Box width={[1]} mt={[4, 5]}>
+          <Box maxWidth={1200} width={[1]} mt={[4, 5]}>
             <Text
               transform={3}
               fontWeight='bold'
