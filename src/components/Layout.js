@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Box from './Box'
 import Header from './Header'
-import './index.css'
+import '../index.css'
 
 const Layout = props => {
   return (
