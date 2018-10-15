@@ -10,6 +10,7 @@ import {
   borderColor,
   borderRadius,
   maxWidth,
+  minWidth,
   size,
   position,
   top,
@@ -57,7 +58,7 @@ const boxShadow = props => ({
 
 const StyledBox = styled.div`
   transform-origin: 0;
-  ${boxShadow} ${borders} ${space} ${size} ${maxWidth} ${transform} ${width} ${height} ${fontWeight} ${fontSize} ${color} ${borderRadius} ${position} ${top} ${bottom} ${left} ${right} ${zIndex} ${skew} ${borderColor};
+  ${boxShadow} ${borders} ${space} ${size} ${maxWidth} ${minWidth} ${transform} ${width} ${height} ${fontWeight} ${fontSize} ${color} ${borderRadius} ${position} ${top} ${bottom} ${left} ${right} ${zIndex} ${skew} ${borderColor};
 `
 
 // To recognise propTypes in docz, we have to create new Box to wrap StyledBox

@@ -63,7 +63,7 @@ class Header extends Component {
                 'hover-black',
                 'fr',
                 'link',
-                'mr3'
+                'mr4'
               )}
               to='/'
             >
