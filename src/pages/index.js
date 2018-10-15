@@ -58,8 +58,10 @@ const index = ({ location }) => {
               <Text pt={2} fontSize={2}>
                 1-3 Ferme Park Road, N4 4DS
               </Text>
-              <Text fontSize={2}>
-                02083407677
+              <Text pt={1} fontSize={2}>
+                <a className='link black' href='tel:02083407677'>
+                  {' '}02083407677
+                </a>
               </Text>
             </Box>
           </Flex>
