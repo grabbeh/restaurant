@@ -13,7 +13,7 @@ const index = ({ location }) => {
           transform={3}
           className='w-100'
           bg='gold'
-          height={[400, 450, 500]}
+          height={[400, 450, 500, 550]}
           zIndex={1}
           px={[3, 3, 4]}
         >
