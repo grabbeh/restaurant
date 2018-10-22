@@ -29,7 +29,7 @@ class Header extends Component {
         <Grow show={showMenu}>
           <Menu showMenu={showMenu} close={close} />
         </Grow>
-        <div className={cn('bg-gold cf w-100 f4 z-4')}>
+        <div className={cn('bg-gold cf w-100 f3 z-4')}>
           {showMenu
             ? <div onClick={close} className='dn-ns'>
               <div className='pointer dark-gray fr mt3 mr2'>
@@ -41,7 +41,7 @@ class Header extends Component {
                   Options
                 </div>
             </div>}
-          <div className=' mt3 f4 dn dib-ns fr'>
+          <div className=' mt3 f3 dn dib-ns fr'>
             <Link
               style={{ outline: 0 }}
               className={cn(
