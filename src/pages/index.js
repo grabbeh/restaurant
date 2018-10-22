@@ -35,7 +35,7 @@ const index = ({ location }) => {
           </Box>
         </Box>
         <Box className='concrete' position='relative' height={300} />
-        <Box height={300} className='concrete' pb={5} pt={[6, 5]} mb={0}>
+        <Box height={300} className='concrete' pb={5} pt={[6, 6, 5]} mb={0}>
           <Flex justifyContent='flex-end' flexWrap='wrap'>
             <Box className='concrete' pl={[3, 0]} width={[1, 1 / 4]} bg='white'>
               <Text fontSize={3} fontWeight='bold'>
