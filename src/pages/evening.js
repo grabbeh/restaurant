@@ -6,7 +6,7 @@ import Text from '../components/Text'
 import { graphql } from 'gatsby'
 import { Flex } from '../components/Flex'
 
-const index = ({ data: { allContentfulMenuItem: { edges } }, location }) => {
+const evening = ({ data: { allContentfulMenuItem: { edges } }, location }) => {
   let menuItems = edges.map(i => {
     let { menuItem, menuType, menuItemDescription, menuPrice } = i.node
     return { menuItem, menuType, menuItemDescription, menuPrice }
@@ -42,7 +42,7 @@ const index = ({ data: { allContentfulMenuItem: { edges } }, location }) => {
   )
 }
 
-export default index
+export default evening
 
 export const query = graphql`
    {
