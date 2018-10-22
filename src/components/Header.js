@@ -29,7 +29,7 @@ class Header extends Component {
         <Grow show={showMenu}>
           <Menu showMenu={showMenu} close={close} />
         </Grow>
-        <div className={cn('bg-gold cf w-100 f4 z-4')}>
+        <div className={cn('bg-gold cf w-100 f5 z-4')}>
           {showMenu
             ? <div onClick={close} className='dn-ns'>
               <div className='pointer dark-gray fr mt3 mr2'>
