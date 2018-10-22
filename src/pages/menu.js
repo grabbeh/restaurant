@@ -15,7 +15,7 @@ const menu = ({ data: { allContentfulMenuItem: { edges } }, location }) => {
       <Box height='100vh' bg='gold' px={3} py={4}>
         <Flex justifyContent='center'>
            <Box>
-            <Text py={3} fontSize={3} fontWeight='bold'>Main</Text>
+            <Text my={3} fontSize={3} fontWeight='bold'>Main</Text>
             {menuItems.map(i => {
               return (
                 <Box width={300} key={i.menuItem}>
