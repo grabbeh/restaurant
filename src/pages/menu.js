@@ -30,7 +30,7 @@ const menu = ({ data: { allContentfulMenuItem: { edges } }, location }) => {
                     </Box>
                     <Box width={0.1}>
                       <Flex justifyContent='flex-end'>
-                        <Text lineHeight='1.7' pt={3}>{i.menuPrice}</Text>
+                        <Text lineHeight='1.7' pt={3}>{`£${i.menuPrice}`}</Text>
                       </Flex>
                     </Box>
                   </Flex>
