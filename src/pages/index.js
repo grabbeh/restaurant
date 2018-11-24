@@ -17,12 +17,10 @@ import Img from 'gatsby-image'
 import Carousel from 'nuka-carousel'
 
 const example = props => {
-  console.log(props)
   const {
     carouselImages,
-    restaurantDescription: { html }
+    restaurantDescription: { childMarkdownRemark: { html } }
   } = props.data.allContentfulHomePage.edges[0].node
-
   return (
     <Layout>
       <Box height='100vh'>
@@ -103,10 +101,10 @@ const example = props => {
                       CAFE/BAR/RESTAURANT
                     </Text>
                     <Box mt={3}>
-                      <Text fontSize={2}>
-                        <div dangerouslySetInnerHTML={{ __html: html }} />
-
-                      </Text>
+                      <Text
+                        fontSize={2}
+                        dangerouslySetInnerHTML={{ __html: html }}
+                      />
                       <Box mt={4}><Button>MENU</Button></Box>
                     </Box>
                   </Box>
