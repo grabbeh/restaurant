@@ -1,4 +1,4 @@
-const path = require('path')
+/* const path = require('path')
 const uniq = require('lodash/uniq')
 
 exports.createPages = ({ actions, graphql }) => {
@@ -38,3 +38,4 @@ exports.createPages = ({ actions, graphql }) => {
     })
   })
 }
+*/

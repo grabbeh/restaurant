@@ -1,10 +1,9 @@
 import React from 'react'
-import Box from '../components/Box'
+import Box from './src/components/Box'
 import { graphql } from 'gatsby'
-import Button from '../components/Button'
-import { Flex } from '../components/Flex'
-import Text from '../components/Text'
-import Layout from '../components/Layout'
+import Button from './src/components/Button'
+import { Flex } from './src/components/Flex'
+import Text from './src/components/Text'
 import {
   FaBars,
   FaTwitter,
@@ -15,14 +14,10 @@ import {
 } from 'react-icons/fa'
 import Img from 'gatsby-image'
 import Carousel from 'nuka-carousel'
+import Layout from './src/components/Layout'
 
 const example = props => {
-  console.log(props)
-  const {
-    carouselImages,
-    restaurantDescription: { html }
-  } = props.data.allContentfulHomePage.edges[0].node
-
+  const { carouselImages } = props.data.allContentfulHomePage.edges[0].node
   return (
     <Layout>
       <Box height='100vh'>
@@ -74,6 +69,7 @@ const example = props => {
                   {carouselImages.map(i => (
                     <Box key={i.id} height={350}>
                       <Img
+                        style={{ objectFit: 'cover' }}
                         fluid={i.fluid}
                         alt={i.description}
                         title={i.description}
@@ -104,8 +100,7 @@ const example = props => {
                     </Text>
                     <Box mt={3}>
                       <Text fontSize={2}>
-                        <div dangerouslySetInnerHTML={{ __html: html }} />
-
+                        Description
                       </Text>
                       <Box mt={4}><Button>MENU</Button></Box>
                     </Box>
@@ -162,12 +157,7 @@ export const query = graphql`
     {
     allContentfulHomePage {
       edges {
-        node {  
-          restaurantDescription {
-            childMarkdownRemark {
-              html
-            }
-          }
+        node {
           carouselImages {
             fluid(maxWidth: 600) {
               ...GatsbyContentfulFluid_noBase64

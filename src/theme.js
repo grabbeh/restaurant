@@ -6,7 +6,7 @@ const theme = {
   radii: [0, 2, 4, 16, 9999, '100%'],
   typeface: {
     serif: 'athelas, georgia, times, serif',
-    sansSerif: '-apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif'
+    sansSerif: "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"
   },
   rotation: [45, 90, 120, 150],
   skew: [5, 10, 15, 20, 25, 30],
