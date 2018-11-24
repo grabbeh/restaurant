@@ -29,7 +29,7 @@ const menu = () => {
                 </Link>
               </Flex>
               <Flex justifyContent='center'>
-                <Link to='/dinner'>
+                <Link to='/evening'>
                   <Button mb={4} width={200}>
                     DINNER
                   </Button>
