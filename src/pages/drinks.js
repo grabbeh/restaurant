@@ -15,7 +15,7 @@ const evening = props => {
       <Box>
         <Box height={400}>
           <Flex justifyContent='center'>
-            <Box zIndex={1}>
+            <Box width={[1, 450]} zIndex={1}>
               <Box mx={3} my={4}>
                 <Text fontSize={3} fontWeight='bold'>{title}</Text>
                 {edges.map(({ node: { name, price, description } }) => {
