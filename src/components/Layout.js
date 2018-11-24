@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import '../index.css'
+import Footer from '../components/Footer'
 
 const Layout = props => {
   return (
@@ -27,10 +28,17 @@ const Layout = props => {
             >
               <html lang='en' />
             </Helmet>
-            <div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh'
+              }}
+            >
               {props.children}
-            </div>
 
+            </div>
+            <Footer />
           </Fragment>
         )
       }}

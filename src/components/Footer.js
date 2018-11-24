@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Box from './Box'
 import { Flex } from './Flex'
 import { FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa'
 
 const Footer = () => (
-  <Box zIndex={2} bg='petrol' py={4}>
+  <Box width={1} className='footer' py={4} bg='petrol'>
     <Flex justifyContent='center'>
       <Box color='white' mr={4}>
         <FaInstagram size={30} />

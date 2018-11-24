@@ -10,6 +10,7 @@ import {
   borderColor,
   borderRadius,
   maxWidth,
+  minHeight,
   minWidth,
   size,
   position,
@@ -58,7 +59,7 @@ const boxShadow = props => ({
 
 const StyledBox = styled.div`
   transform-origin: 0;
-  ${boxShadow} ${borders} ${space} ${size} ${maxWidth} ${minWidth} ${transform} ${skew} ${width} ${height} ${fontWeight} ${fontSize} ${color} ${borderRadius} ${position} ${top} ${bottom} ${left} ${right} ${zIndex} ${borderColor};
+  ${boxShadow} ${borders} ${space} ${size} ${maxWidth} ${minWidth} ${minHeight} ${transform} ${skew} ${width} ${height} ${fontWeight} ${fontSize} ${color} ${borderRadius} ${position} ${top} ${bottom} ${left} ${right} ${zIndex} ${borderColor};
 `
 
 // To recognise propTypes, we have to create new Box to wrap StyledBox

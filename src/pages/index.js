@@ -1,36 +1,31 @@
 import React from 'react'
 import Box from '../components/Box'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Button from '../components/Button'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
 import Layout from '../components/Layout'
-import {
-  FaBars,
-  FaTwitter,
-  FaInstagram,
-  FaFacebookF,
-  FaAngleLeft,
-  FaAngleRight
-} from 'react-icons/fa'
+import { FaBars, FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import Img from 'gatsby-image'
 import Carousel from 'nuka-carousel'
 
 const example = props => {
-  const {
-    carouselImages,
-    restaurantDescription: { childMarkdownRemark: { html } }
-  } = props.data.allContentfulHomePage.edges[0].node
+  let { node } = props.data.allContentfulHomePage.edges[0]
+  let { carouselImages, restaurantDescription } = node
   return (
     <Layout>
-      <Box height='100vh'>
+      <Box>
         <Box zIndex={1} bg='petrol' height={15} />
         <Flex justifyContent='center'>
           <Box zIndex={1} width={[0.9, 0.8, 0.7]} maxWidth={1200}>
             <Box mt={[3, 4, 4]}>
               <Flex flexWrap='wrap' justifyContent='space-between'>
                 <Flex alignItems='center'>
-                  <Box><Text color='petrol'><FaBars size={30} /></Text></Box>
+                  <Box width={150}>
+                    <Link to='/menu'>
+                      <Text color='petrol'><FaBars size={30} /></Text>
+                    </Link>
+                  </Box>
                 </Flex>
                 <Box mt={[2, 3, 3, 0]} width={[1, 1, 1, 450]}>
                   <img
@@ -42,7 +37,9 @@ const example = props => {
                 </Box>
                 <Flex alignItems='center'>
                   <Box mt={[2, 3, 3, 0]}>
-                    <Button width={150}>FIND A TABLE</Button>
+                    <Link to='/book'>
+                      <Button width={[1, 150]}>FIND A TABLE</Button>
+                    </Link>
                   </Box>
                 </Flex>
               </Flex>
@@ -53,6 +50,7 @@ const example = props => {
                   autoplay
                   wrapAround
                   initialSlideWidth={600}
+                  initialSlideHeight={400}
                   autoplayInterval={2000}
                   renderCenterLeftControls={({ previousSlide }) => (
                     <Box>
@@ -72,6 +70,7 @@ const example = props => {
                   {carouselImages.map(i => (
                     <Box key={i.id} height={350}>
                       <Img
+                        style={{ height: '350px' }}
                         fluid={i.fluid}
                         alt={i.description}
                         title={i.description}
@@ -97,15 +96,20 @@ const example = props => {
               <Box width={[0.9, 0.8, 0.7]} py={[3, 4, 4]}>
                 <Flex flexWrap='wrap' justifyContent='space-between'>
                   <Box width={[1, 1, 0.4]}>
-                    <Text fontWeight='bold' fontSize={3}>
-                      CAFE/BAR/RESTAURANT
+                    <Text fontWeight='bold' fontSize={[2, 3]}>
+                      CAFE, BAR AND RESTAURANT
                     </Text>
                     <Box mt={3}>
                       <Text
                         fontSize={2}
-                        dangerouslySetInnerHTML={{ __html: html }}
+                        dangerouslySetInnerHTML={{
+                          __html: restaurantDescription.childMarkdownRemark
+                            .html
+                        }}
                       />
-                      <Box mt={4}><Button>MENU</Button></Box>
+                      <Box mt={4}>
+                        <Link to='/menu'><Button>MENUS</Button></Link>
+                      </Box>
                     </Box>
                   </Box>
                   <Box mt={[4, 4, 0]}>
@@ -120,14 +124,18 @@ const example = props => {
                 </Flex>
                 <Flex justifyContent='space-around' />
                 <Flex justifyContent='space-around'>
-                  <Box mt={4}><Button width={150}>FIND A TABLE</Button></Box>
+                  <Box mt={4}>
+                    <Link to='/book'>
+                      <Button width={150}>FIND A TABLE</Button>
+                    </Link>
+                  </Box>
                 </Flex>
               </Box>
             </Flex>
           </Box>
         </Box>
         <Flex justifyContent='center'>
-          <Box zIndex={2} mt={3}>
+          <Box px={3} zIndex={2} mt={3}>
             <Text textAlign='center'>
               Call us or book online with Open Table
             </Text>
@@ -138,17 +146,6 @@ const example = props => {
             </Box>
           </Box>
         </Flex>
-        <Box zIndex={2} bg='petrol' py={4}>
-          <Flex justifyContent='center'>
-            <Box color='white' mr={4}>
-              <FaInstagram size={30} />
-            </Box>
-            <Box color='white' mr={4}><FaFacebookF size={30} /></Box>
-            <Box color='white'>
-              <FaTwitter size={30} />
-            </Box>
-          </Flex>
-        </Box>
       </Box>
     </Layout>
   )
