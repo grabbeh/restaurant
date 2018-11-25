@@ -39,7 +39,7 @@ const michael = props => {
                   Serving a selection of cakes & pastries, salads & sandwiches and a selection of small plates in the evening
                 </Text>
               </Box>
-              <Box p={4} bg='go-orange' mt={3}>
+              <Box p={3} bg='go-orange' mt={3}>
                 <Box mb={3} fontSize={3}>
                   <Text fontWeight='bold' color='black'>INFO</Text>
                 </Box>
@@ -47,7 +47,7 @@ const michael = props => {
                 <Box mb={1}>
                   <Text color='black' fontWeight='bold'>PHONE</Text>
                 </Box>
-                <Box mb={3}><Text color='black'>02083407677</Text></Box>
+                <Box mb={3}><Text color='black  '>02083407677</Text></Box>
                 <Box mb={1}>
                   <Text color='black' fontWeight='bold'>ADDRESS</Text>
                 </Box>
