@@ -4,70 +4,46 @@ import Box from '../components/Box'
 import { Flex } from '../components/Flex'
 import Header from '../components/Header'
 import Button from '../components/Button'
-import { Link } from 'gatsby'
+import { Link, graphql, StaticQuery } from 'gatsby'
 
 const menu = () => {
   return (
-    <Layout>
-      <Header />
-      <Box>
-        <Box>
-          <Flex justifyContent='center'>
+    <StaticQuery
+      query={graphql`
+      query menuTypeQuery {
+        site {
+          siteMetadata {
+            menuTypes {
+              link
+              title
+            }
+          }
+        }
+      }
+    `}
+      render={data => {
+        return (
+          <Layout>
+            <Header />
             <Box my={4}>
-              <Flex justifyContent='center'>
-                <Link to='/breakfast'>
-                  <Button mb={4} width={200}>
-                    BREAKFAST
-                  </Button>
-                </Link>
-              </Flex>
-              <Flex justifyContent='center'>
-                <Link to='/evening'>
-                  <Button mb={4} width={200}>
-                    LUNCH
-                  </Button>
-                </Link>
-              </Flex>
-              <Flex justifyContent='center'>
-                <Link to='/evening'>
-                  <Button mb={4} width={200}>
-                    DINNER
-                  </Button>
-                </Link>
-              </Flex>
-              <Flex justifyContent='center'>
-                <Link to='/evening'>
-                  <Button mb={4} width={200}>
-                    ALL DAY
-                  </Button>
-                </Link>
-              </Flex>
-              <Flex justifyContent='center'>
-                <Link to='/drinks'>
-                  <Button mb={4} width={200}>
-                    DRINKS
-                  </Button>
-                </Link>
-              </Flex>
-              <Flex justifyContent='center'>
-                <Link to='/evening'>
-                  <Button mb={4} width={200}>
-                    EVENTS
-                  </Button>
-                </Link>
-              </Flex>
-              <Flex justifyContent='center'>
-                <Link to='/evening'>
-                  <Button mb={4} width={200}>
-                    ABOUT
-                  </Button>
-                </Link>
+              <Flex flexWrap='wrap' justifyContent='center'>
+                {data.site.siteMetadata.menuTypes.map(({ link, title }) => {
+                  return (
+                    <Box key={title} mr={4} mb={4}>
+                      <Link to={link}>
+                        <Button width={[1, 1, 200]}>
+                          {title}
+                        </Button>
+                      </Link>
+                    </Box>
+                  )
+                })}
               </Flex>
             </Box>
-          </Flex>
-        </Box>
-      </Box>
-    </Layout>
+          </Layout>
+        )
+      }}
+    />
   )
 }
 

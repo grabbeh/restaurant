@@ -4,7 +4,15 @@ if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Goods Office'
+    title: 'Goods Office',
+    menuTypes: [
+      { link: '/breakfast', title: 'Breakfast' },
+      { link: '/all-day', title: 'All day' },
+      { link: '/evening', title: 'Dinner' },
+      { link: '/drinks', title: 'Drinks' },
+      { link: '/events', title: 'Events' },
+      { link: '/info', title: 'Info' }
+    ]
   },
   plugins: [
     `gatsby-plugin-styled-components`,

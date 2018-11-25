@@ -17,50 +17,52 @@ const example = props => {
       <Box>
         <Box zIndex={1} bg='petrol' height={15} />
         <Flex justifyContent='center'>
-          <Box zIndex={1} width={[0.9, 0.8, 0.7]} maxWidth={1200}>
-            <Box mt={[3, 4, 4]}>
-              <Flex flexWrap='wrap' justifyContent='space-between'>
-                <Flex alignItems='center'>
-                  <Box width={150}>
-                    <Link to='/menu'>
-                      <Text color='petrol'><FaBars size={30} /></Text>
-                    </Link>
-                  </Box>
-                </Flex>
-                <Box mt={[2, 3, 3, 0]} width={[1, 1, 1, 450]}>
-                  <img
-                    style={{ width: '100%' }}
-                    alt='GOODS OFFICE logo'
-                    title='GOODS OFFICE logo'
-                    src='/logo.PNG'
-                  />
+          <Box
+            mt={[3, 4, 4]}
+            zIndex={1}
+            width={[0.9, 0.8, 0.7]}
+            maxWidth={1200}
+          >
+            <Flex flexWrap='wrap' justifyContent='space-between'>
+              <Flex alignItems='center'>
+                <Box width={150}>
+                  <Link to='/menu'>
+                    <Text color='petrol'><FaBars size={30} /></Text>
+                  </Link>
                 </Box>
-                <Flex alignItems='center'>
-                  <Box mt={[2, 3, 3, 0]}>
-                    <Link to='/book'>
-                      <Button width={[1, 150]}>FIND A TABLE</Button>
-                    </Link>
-                  </Box>
-                </Flex>
               </Flex>
-            </Box>
+              <Box mt={[2, 3, 3, 0]} width={[1, 1, 1, 0.5]}>
+                <img
+                  style={{ width: '100%' }}
+                  alt='GOODS OFFICE logo'
+                  title='GOODS OFFICE logo'
+                  src='/logo.PNG'
+                />
+              </Box>
+              <Flex alignItems='center'>
+                <Box mt={[2, 3, 3, 0]}>
+                  <Link to='/book'>
+                    <Button width={[1, 150]}>FIND A TABLE</Button>
+                  </Link>
+                </Box>
+              </Flex>
+            </Flex>
+
             <Flex justifyContent='center'>
-              <Box width={[1, 0.9, 0.8]} mt={4}>
+              <Box width={1} mt={4}>
                 <Carousel
                   autoplay
                   wrapAround
-                  initialSlideWidth={600}
-                  initialSlideHeight={400}
                   autoplayInterval={2000}
                   renderCenterLeftControls={({ previousSlide }) => (
-                    <Box>
+                    <Box ml={-3}>
                       <Button onClick={previousSlide} px={1} py={1}>
                         <FaAngleLeft size={20} />
                       </Button>
                     </Box>
                   )}
                   renderCenterRightControls={({ nextSlide }) => (
-                    <Box>
+                    <Box mr={-3}>
                       <Button onClick={nextSlide} px={1} py={1}>
                         <FaAngleRight size={20} />
                       </Button>
@@ -93,9 +95,14 @@ const example = props => {
           />
           <Box position='relative'>
             <Flex justifyContent='center'>
-              <Box width={[0.9, 0.8, 0.7]} py={[3, 4, 4]}>
+              <Box
+                maxWidth={1200}
+                width={[0.9, 0.7, 0.7, 0.6]}
+                mx={4}
+                my={[3, 4, 4]}
+              >
                 <Flex flexWrap='wrap' justifyContent='space-between'>
-                  <Box width={[1, 1, 0.4]}>
+                  <Box maxWidth={1200} width={[1, 0.8, 0.5]}>
                     <Text fontWeight='bold' fontSize={[2, 3]}>
                       CAFE, BAR AND RESTAURANT
                     </Text>
