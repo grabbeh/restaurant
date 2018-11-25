@@ -17,7 +17,7 @@ class Example extends Component {
   componentDidMount () {
     setTimeout(() => {
       this.setState({ showPlaceholder: false })
-    }, 100)
+    }, 500)
   }
 
   render () {
@@ -61,7 +61,10 @@ class Example extends Component {
               </Flex>
               <Flex justifyContent='center'>
                 <Box width={1} mt={4}>
-                  {showPlaceholder && <Box height={350} />}
+                  {showPlaceholder &&
+                    <Flex justifyContent='center'>
+                      <Box width={[1]} height={350} bg='near-white' />
+                    </Flex>}
                   {!showPlaceholder &&
                     <Carousel
                       autoplay

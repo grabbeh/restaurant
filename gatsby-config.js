@@ -38,7 +38,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-page-transitions',
       options: {
-        transitionTime: 2000
+        transitionTime: 750
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

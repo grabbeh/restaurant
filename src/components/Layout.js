@@ -29,9 +29,8 @@ const Layout = props => {
             >
               <html lang='en' />
             </Helmet>
-
             <Box
-              bg={`${props.bg}`}
+              bg={props.bg}
               style={{
                 backgroundColor: `${props.bg}`,
                 display: 'flex',
@@ -43,7 +42,6 @@ const Layout = props => {
 
             </Box>
             <Footer />
-
           </Fragment>
         )
       }}
