@@ -15,7 +15,7 @@ const Header = () => (
           <Flex flexWrap='wrap' justifyContent='space-between'>
             <Flex alignItems='center'>
               <Box width={150}>
-                <Link to='/menu'>
+                <Link to='/navigation'>
                   <Text color='petrol'><FaBars size={30} /></Text>
                 </Link>
               </Box>

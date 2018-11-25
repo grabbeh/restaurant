@@ -1,17 +1,16 @@
-if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-  require('dotenv').config({ path: './config/keys.env' })
-}
+// if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
+require('dotenv').config({ path: './config/keys.env' })
+// }
 
 module.exports = {
   siteMetadata: {
     title: 'Goods Office',
     menuTypes: [
-      { link: '/breakfast', title: 'Breakfast' },
-      { link: '/all-day', title: 'All day' },
-      { link: '/evening', title: 'Dinner' },
-      { link: '/drinks', title: 'Drinks' },
+      { link: '/menus', title: 'Menus' },
       { link: '/events', title: 'Events' },
-      { link: '/info', title: 'Info' }
+      { link: '/info', title: 'Info' },
+      { link: '/find-us', title: 'Find us' },
+      { link: '/', title: 'Home' }
     ]
   },
   plugins: [

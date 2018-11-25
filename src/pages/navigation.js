@@ -26,9 +26,9 @@ const menu = () => {
           <Layout>
             <Header />
             <Box my={4}>
-              <Flex flexWrap='wrap' justifyContent='center'>
-                {data.site.siteMetadata.menuTypes.map(({ link, title }) => {
-                  return (
+              {data.site.siteMetadata.menuTypes.map(({ link, title }) => {
+                return (
+                  <Flex justifyContent='center'>
                     <Box key={title} mr={4} mb={4}>
                       <Link to={link}>
                         <Button width={[200]}>
@@ -36,9 +36,10 @@ const menu = () => {
                         </Button>
                       </Link>
                     </Box>
-                  )
-                })}
-              </Flex>
+                  </Flex>
+                )
+              })}
+
             </Box>
           </Layout>
         )
