@@ -5,7 +5,6 @@ import { Flex } from '../components/Flex'
 import Header from '../components/Header'
 import Button from '../components/Button'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import PageTransition from 'gatsby-plugin-page-transitions'
 
 const menu = () => {
   return (
@@ -26,23 +25,23 @@ const menu = () => {
         return (
           <Layout bg='go-light-peach'>
             <Header />
-            <PageTransition>
-              <Box py={4}>
-                {data.site.siteMetadata.menuTypes.map(({ link, title }) => {
-                  return (
-                    <Flex justifyContent='center'>
-                      <Box key={title} mr={4} pb={4}>
-                        <Link to={link}>
-                          <Button width={[200]}>
-                            {title}
-                          </Button>
-                        </Link>
-                      </Box>
-                    </Flex>
-                  )
-                })}
-              </Box>
-            </PageTransition>
+
+            <Box py={4}>
+              {data.site.siteMetadata.menuTypes.map(({ link, title }) => {
+                return (
+                  <Flex justifyContent='center'>
+                    <Box key={title} mr={4} pb={4}>
+                      <Link to={link}>
+                        <Button width={[200]}>
+                          {title}
+                        </Button>
+                      </Link>
+                    </Box>
+                  </Flex>
+                )
+              })}
+            </Box>
+
           </Layout>
         )
       }}

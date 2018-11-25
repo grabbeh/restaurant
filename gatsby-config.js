@@ -1,6 +1,6 @@
-// if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-require('dotenv').config({ path: './config/keys.env' })
-// }
+if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
+  require('dotenv').config({ path: './config/keys.env' })
+}
 
 module.exports = {
   siteMetadata: {
@@ -35,12 +35,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
-    {
-      resolve: 'gatsby-plugin-page-transitions',
-      options: {
-        transitionTime: 750
-      }
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
