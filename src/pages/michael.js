@@ -24,7 +24,7 @@ const michael = props => {
         <Flex flexWrap='wrap'>
           <Box height='100vh' width={[1, 0.5]}>
             <Box p={[3, 4]}>
-              <Box width={350} borderBottom='3px solid' borderColor='red'>
+              <Box width={[1, 350]} borderBottom='3px solid' borderColor='red'>
                 <Text
                   textAlign='center'
                   fontWeight='bold'
