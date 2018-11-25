@@ -4,7 +4,7 @@ const theme = {
   fontSizes: [12, 16, 20, 24, 36, 48, 80, 96],
   borderWidths: [0, 1, 2, 4, 8, 16, 32],
   radii: [0, 2, 4, 16, 9999, '100%'],
-  typeface: {
+  fonts: {
     serif: 'athelas, georgia, times, serif',
     sansSerif: '-apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
     segoe: 'Segoe UI'

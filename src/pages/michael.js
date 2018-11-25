@@ -19,7 +19,7 @@ const michael = props => {
   )
 
   return (
-    <Layout color='black' fontFamily='Segoe UI'>
+    <Layout color='black' fontFamily='sansSerif'>
       <Box>
         <Flex flexWrap='wrap'>
           <Box height='100vh' width={[1, 0.5]}>
