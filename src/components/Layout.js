@@ -31,6 +31,8 @@ const Layout = props => {
             </Helmet>
             <Box
               bg={props.bg}
+              color={props.color}
+              fontFamily={props.fontFamily}
               style={{
                 backgroundColor: `${props.bg}`,
                 display: 'flex',
