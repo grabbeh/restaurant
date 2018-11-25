@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import Box from '../components/Box'
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn't exist... the sadness.</p>
+    <Box ma={4}>Apologies - there doesn't appear to be a page for this URL</Box>
   </Layout>
 )
 

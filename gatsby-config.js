@@ -32,6 +32,8 @@ module.exports = {
         }
       }
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline

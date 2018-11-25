@@ -31,7 +31,7 @@ const menu = () => {
                   return (
                     <Box key={title} mr={4} mb={4}>
                       <Link to={link}>
-                        <Button width={[1, 1, 200]}>
+                        <Button width={[200]}>
                           {title}
                         </Button>
                       </Link>

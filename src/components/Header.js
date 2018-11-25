@@ -20,7 +20,7 @@ const Header = () => (
                 </Link>
               </Box>
             </Flex>
-            <Box mt={[2, 3, 3, 0]} width={[1, 1, 1, 450]}>
+            <Box mt={[2, 3, 3, 0]} width={[1, 1, 1, 0.5]}>
               <Link to='/'>
                 <img
                   style={{ width: '100%' }}
