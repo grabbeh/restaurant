@@ -10,7 +10,7 @@ const evening = props => {
   const edges = props.data.allContentfulMenuItem.edges
   const title = edges[0].node.type
   return (
-    <Layout>
+    <Layout bg='go-light-peach'>
       <Header />
       <Box>
         <Box>
@@ -48,13 +48,6 @@ const evening = props => {
             </Box>
           </Flex>
         </Box>
-        <Box
-          bg='go-light-peach'
-          height={350}
-          mt={-100}
-          width='100%'
-          transform={2}
-        />
       </Box>
     </Layout>
   )

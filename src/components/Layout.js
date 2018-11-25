@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import '../index.css'
 import Footer from '../components/Footer'
+import Box from '../components/Box'
 
 const Layout = props => {
   return (
@@ -28,8 +29,11 @@ const Layout = props => {
             >
               <html lang='en' />
             </Helmet>
-            <div
+
+            <Box
+              bg={`${props.bg}`}
               style={{
+                backgroundColor: `${props.bg}`,
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: '100vh'
@@ -37,8 +41,9 @@ const Layout = props => {
             >
               {props.children}
 
-            </div>
+            </Box>
             <Footer />
+
           </Fragment>
         )
       }}

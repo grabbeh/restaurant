@@ -10,7 +10,18 @@ import Img from 'gatsby-image'
 import Carousel from 'nuka-carousel'
 
 class Example extends Component {
+  state = {
+    showPlaceholder: true
+  }
+
+  componentDidMount () {
+    setTimeout(() => {
+      this.setState({ showPlaceholder: false })
+    }, 100)
+  }
+
   render () {
+    let { showPlaceholder } = this.state
     let { node } = this.props.data.allContentfulHomePage.edges[0]
     let { carouselImages, restaurantDescription } = node
     return (
@@ -43,44 +54,46 @@ class Example extends Component {
                 <Flex alignItems='center'>
                   <Box mt={[2, 3, 3, 0]}>
                     <Link to='/book'>
-                      <Button width={[1, 150]}>BOOK A SPACE</Button>
+                      <Button width={[1, 150]}>BOOK</Button>
                     </Link>
                   </Box>
                 </Flex>
               </Flex>
               <Flex justifyContent='center'>
                 <Box width={1} mt={4}>
-                  <Carousel
-                    autoplay
-                    wrapAround
-                    autoplayInterval={2000}
-                    renderCenterLeftControls={({ previousSlide }) => (
-                      <Box ml={[0, -3]}>
-                        <Button onClick={previousSlide} px={1} py={1}>
-                          <FaAngleLeft size={20} />
-                        </Button>
-                      </Box>
-                    )}
-                    renderCenterRightControls={({ nextSlide }) => (
-                      <Box mr={[0, -3]}>
-                        <Button onClick={nextSlide} px={1} py={1}>
-                          <FaAngleRight size={20} />
-                        </Button>
-                      </Box>
-                    )}
-                  >
-                    {carouselImages.map(i => (
-                      <Img
-                        style={{ height: '350px' }}
-                        key={i.id}
-                        backgroundColor={'#fafafa'}
-                        fluid={i.fluid}
-                        placeholderStyle={{ height: '350px' }}
-                        alt={i.description}
-                        title={i.description}
-                      />
-                    ))}
-                  </Carousel>
+                  {showPlaceholder && <Box height={350} />}
+                  {!showPlaceholder &&
+                    <Carousel
+                      autoplay
+                      wrapAround
+                      autoplayInterval={2000}
+                      renderCenterLeftControls={({ previousSlide }) => (
+                        <Box ml={[0, -3]}>
+                          <Button onClick={previousSlide} px={1} py={1}>
+                            <FaAngleLeft size={20} />
+                          </Button>
+                        </Box>
+                      )}
+                      renderCenterRightControls={({ nextSlide }) => (
+                        <Box mr={[0, -3]}>
+                          <Button onClick={nextSlide} px={1} py={1}>
+                            <FaAngleRight size={20} />
+                          </Button>
+                        </Box>
+                      )}
+                    >
+                      {carouselImages.map(i => (
+                        <Img
+                          style={{ height: '350px' }}
+                          key={i.id}
+                          backgroundColor={'#fafafa'}
+                          fluid={i.fluid}
+                          placeholderStyle={{ height: '350px' }}
+                          alt={i.description}
+                          title={i.description}
+                        />
+                      ))}
+                    </Carousel>}
                 </Box>
               </Flex>
             </Box>
@@ -132,7 +145,7 @@ class Example extends Component {
                 <Flex justifyContent='space-around'>
                   <Box mt={4}>
                     <Link to='/book'>
-                      <Button width={150}>BOOK A SPACE</Button>
+                      <Button width={150}>BOOK</Button>
                     </Link>
                   </Box>
                 </Flex>

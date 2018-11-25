@@ -6,16 +6,17 @@ module.exports = {
   siteMetadata: {
     title: 'Goods Office',
     menuTypes: [
+      { link: '/', title: 'Home' },
       { link: '/menus', title: 'Menus' },
       { link: '/events', title: 'Events' },
       { link: '/info', title: 'Info' },
-      { link: '/find-us', title: 'Find us' },
-      { link: '/', title: 'Home' }
+      { link: '/find-us', title: 'Find us' }
     ]
   },
   plugins: [
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-favicon`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -34,9 +35,15 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-plugin-page-transitions',
+      options: {
+        transitionTime: 2000
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
     `gatsby-plugin-netlify`
   ]
 }
