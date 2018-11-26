@@ -64,7 +64,7 @@ class Example extends Component {
                 <Box width={1} mt={4}>
                   {showPlaceholder &&
                     <Flex justifyContent='center'>
-                      <Box width={[1]} height={1} bg='near-white' />
+                      <Box width={[1]} height={400} bg='near-white' />
                     </Flex>}
                   {!showPlaceholder &&
                     <Carousel
