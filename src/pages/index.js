@@ -13,12 +13,6 @@ class Example extends Component {
   state = {
     showPlaceholder: true
   }
-/*
-  componentDidMount () {
-    setTimeout(() => {
-      this.setState({ showPlaceholder: false })
-    }, 500)
-  }*/
 
   render () {
     console.log(this.props)
@@ -181,7 +175,7 @@ export const query = graphql`
             }
           }
           carouselImages {
-            fluid(maxHeight: 500) {
+            fluid {
               ...GatsbyContentfulFluid
             }
             id
