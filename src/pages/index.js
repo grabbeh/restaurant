@@ -21,6 +21,7 @@ class Example extends Component {
   }
 
   render () {
+    console.log(this.props)
     let { showPlaceholder } = this.state
     let { node } = this.props.data.allContentfulHomePage.edges[0]
     let { carouselImages, restaurantDescription } = node
