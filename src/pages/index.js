@@ -77,15 +77,15 @@ class Example extends Component {
                       )}
                     >
                       {carouselImages.map(i => (
+                       <Flex alignItems='center'>
                         <Img
                           key={i.id}
                           backgroundColor={'#fafafa'}
                           fluid={i.fluid}
                           alt={i.description}
                           title={i.description}
-                          style={{display: flex,
-                                alignItems: center}}
                         />
+                       </Flex>
                       ))}
                     </Carousel>
                 </Box>
