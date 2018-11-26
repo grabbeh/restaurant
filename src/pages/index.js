@@ -64,7 +64,7 @@ class Example extends Component {
                 <Box width={1} mt={4}>
                   {showPlaceholder &&
                     <Flex justifyContent='center'>
-                      <Box width={[1]} height={350} bg='near-white' />
+                      <Box width={[1]} height={1} bg='near-white' />
                     </Flex>}
                   {!showPlaceholder &&
                     <Carousel
@@ -88,11 +88,9 @@ class Example extends Component {
                     >
                       {carouselImages.map(i => (
                         <Img
-                          style={{ height: '350px' }}
                           key={i.id}
                           backgroundColor={'#fafafa'}
                           fluid={i.fluid}
-                          placeholderStyle={{ height: '350px' }}
                           alt={i.description}
                           title={i.description}
                         />
