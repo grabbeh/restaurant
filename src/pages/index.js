@@ -62,11 +62,6 @@ class Example extends Component {
               </Flex>
               <Flex justifyContent='center'>
                 <Box width={1} mt={4}>
-                  //{showPlaceholder &&
-                  //  <Flex justifyContent='center'>
-                    //  <Box width={[1]} height={400} bg='near-white' />
-                   // </Flex>}
-                 // {!showPlaceholder &&
                     <Carousel
                       autoplay
                       wrapAround
