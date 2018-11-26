@@ -76,8 +76,8 @@ class Example extends Component {
                         </Box>
                       )}
                     >
+                     <Flex alignItems='center'>
                       {carouselImages.map(i => (
-                       <Flex alignItems='center'>
                         <Img
                           key={i.id}
                           backgroundColor={'#fafafa'}
@@ -85,8 +85,8 @@ class Example extends Component {
                           alt={i.description}
                           title={i.description}
                         />
-                       </Flex>
                       ))}
+                      </Flex>
                     </Carousel>
                 </Box>
               </Flex>
