@@ -186,7 +186,7 @@ export const query = graphql`
             }
           }
           carouselImages {
-            fluid(maxWidth: 600) {
+            fluid(maxWidth: 1200) {
               ...GatsbyContentfulFluid
             }
             id
