@@ -78,6 +78,7 @@ class Example extends Component {
                     >
                       {carouselImages.map(i => (
                         <Img
+                          critical
                           key={i.id}
                           fluid={i.fluid}
                           alt={i.description}
