@@ -79,7 +79,6 @@ class Example extends Component {
                       {carouselImages.map(i => (
                         <Img
                           key={i.id}
-                          backgroundColor={'#fafafa'}
                           fluid={i.fluid}
                           alt={i.description}
                           title={i.description}
@@ -175,7 +174,7 @@ export const query = graphql`
             }
           }
           carouselImages {
-            fluid {
+            fluid(maxWidth: 1200) {
               ...GatsbyContentfulFluid
             }
             id
