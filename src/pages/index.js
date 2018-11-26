@@ -83,6 +83,8 @@ class Example extends Component {
                           fluid={i.fluid}
                           alt={i.description}
                           title={i.description}
+                          style={{display: flex,
+                                alignItems: center}}
                         />
                       ))}
                     </Carousel>
