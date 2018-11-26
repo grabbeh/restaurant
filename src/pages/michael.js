@@ -9,6 +9,8 @@ import Text from '../components/Text'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import groupBy from 'lodash/groupBy'
+import Header from '../components/AltHeader'
+import Img from 'gatsby-image'
 
 const michael = props => {
   let menuItems = groupBy(
@@ -18,51 +20,50 @@ const michael = props => {
     'type'
   )
 
+  let { node } = props.data.allContentfulHomePage.edges[0]
+  let { headerImage, restaurantDescription } = node
+
   return (
     <Layout color='black' fontFamily='sansSerif'>
       <Box>
         <Flex flexWrap='wrap'>
-          <Box height='100vh' width={[1, 0.5]}>
-            <Box p={[3, 4]}>
-              <Box width={[1, 350]} borderBottom='3px solid' borderColor='red'>
+          <Box width={[1, 0.5]}>
+            <Header />
+            <Box pb={3} px={[3, 4]}>
+              <Box width={1}>
+                <Img fluid={headerImage.fluid} />
+              </Box>
+              <Box my={3}>
                 <Text
-                  textAlign='center'
-                  fontWeight='bold'
-                  fontSize={5}
-                  color='black'
-                >
-                  GOODS OFFICE
-                </Text>
+                  fontSize={2}
+                  dangerouslySetInnerHTML={{
+                    __html: restaurantDescription.childMarkdownRemark.html
+                  }}
+                />
               </Box>
-              <Box mt={3}>
-                <Text color='dark-gray' fontSize={3}>
-                  Serving a selection of cakes & pastries, salads & sandwiches and a selection of small plates in the evening
-                </Text>
+              <Box mb={3} fontSize={3}>
+                <Text fontWeight='bold' color='black'>INFO</Text>
               </Box>
-              <Box p={3} bg='go-orange' mt={3}>
-                <Box mb={3} fontSize={3}>
-                  <Text fontWeight='bold' color='black'>INFO</Text>
-                </Box>
 
-                <Box mb={1}>
-                  <Text color='black' fontWeight='bold'>PHONE</Text>
-                </Box>
-                <Box mb={3}><Text color='black  '>02083407677</Text></Box>
-                <Box mb={1}>
-                  <Text color='black' fontWeight='bold'>ADDRESS</Text>
-                </Box>
-                <Box mb={3}>
-                  <Text color='black'>1-3 Ferme Park Road, N4 4DS</Text>
-                </Box>
-                <Box mb={1}>
-                  <Text color='black' fontWeight='bold'>HOURS</Text>
-                </Box>
-                <Text color='black'>Mon-Sun</Text>
-                <Text color='black'>8:00 am - 11:30 pm</Text>
+              <Box mb={1}>
+                <Text color='black' fontWeight='bold'>PHONE</Text>
               </Box>
+              <Box mb={3}><Text color='black  '>02083407677</Text></Box>
+              <Box mb={1}>
+                <Text color='black' fontWeight='bold'>ADDRESS</Text>
+              </Box>
+              <Box mb={3}>
+                <Text color='black'>1-3 Ferme Park Road, N4 4DS</Text>
+              </Box>
+              <Box mb={1}>
+                <Text color='black' fontWeight='bold'>HOURS</Text>
+              </Box>
+              <Text color='black'>Mon-Sun</Text>
+              <Text color='black'>8:00 am - 11:30 pm</Text>
+
             </Box>
           </Box>
-          <Box height='100vh' width={[1, 0.5]} bg='go-light-peach'>
+          <Box width={[1, 0.5]} bg='go-light-peach'>
             <Box p={[3, 4]}>
               <Tabs>
                 <TabList>
@@ -97,6 +98,22 @@ export const query = graphql`
               }
             }
             type
+          }
+        }
+      }
+      allContentfulHomePage {
+        edges {
+          node {  
+            restaurantDescription {
+              childMarkdownRemark {
+                html
+              }
+            }
+            headerImage {
+              fluid(maxWidth: 1200) {
+                ...GatsbyContentfulFluid
+              }
+            }
           }
         }
       }

@@ -5,20 +5,13 @@ import Button from '../components/Button'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
 import Layout from '../components/Layout'
-import { FaBars, FaAngleLeft, FaAngleRight } from 'react-icons/fa'
+import { FaBars } from 'react-icons/fa'
 import Img from 'gatsby-image'
-import Carousel from 'nuka-carousel'
 
 class Example extends Component {
-  state = {
-    showPlaceholder: true
-  }
-
   render () {
-    console.log(this.props)
-    let { showPlaceholder } = this.state
     let { node } = this.props.data.allContentfulHomePage.edges[0]
-    let { carouselImages, restaurantDescription } = node
+    let { headerImage, restaurantDescription } = node
     return (
       <Layout>
         <Box>
@@ -56,36 +49,7 @@ class Example extends Component {
               </Flex>
               <Flex justifyContent='center'>
                 <Box width={1} mt={4}>
-                    <Carousel
-                      autoplay
-                      wrapAround
-                      heightMode='max'
-                      autoplayInterval={2000}
-                      renderCenterLeftControls={({ previousSlide }) => (
-                        <Box ml={[0, -3]}>
-                          <Button onClick={previousSlide} px={1} py={1}>
-                            <FaAngleLeft size={20} />
-                          </Button>
-                        </Box>
-                      )}
-                      renderCenterRightControls={({ nextSlide }) => (
-                        <Box mr={[0, -3]}>
-                          <Button onClick={nextSlide} px={1} py={1}>
-                            <FaAngleRight size={20} />
-                          </Button>
-                        </Box>
-                      )}
-                    >
-                      {carouselImages.map(i => (
-                        <Img
-                          critical
-                          key={i.id}
-                          fluid={i.fluid}
-                          alt={i.description}
-                          title={i.description}
-                        />
-                      ))}
-                    </Carousel>
+                  <Img fluid={headerImage.fluid} />
                 </Box>
               </Flex>
             </Box>
@@ -172,6 +136,11 @@ export const query = graphql`
           restaurantDescription {
             childMarkdownRemark {
               html
+            }
+          }
+          headerImage {
+            fluid(maxWidth: 1200) {
+              ...GatsbyContentfulFluid
             }
           }
           carouselImages {

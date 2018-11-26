@@ -23,9 +23,8 @@ const menu = () => {
     `}
       render={data => {
         return (
-          <Layout bg='go-light-peach'>
+          <Layout bg='white'>
             <Header />
-
             <Box py={4}>
               {data.site.siteMetadata.menuTypes.map(({ link, title }) => {
                 return (

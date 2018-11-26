@@ -1,27 +1,26 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Box from '../components/Box'
-import Text from '../components/Text'
-import { Flex } from '../components/Flex'
-import Button from '../components/Button'
+import Box from './Box'
+import Text from './Text'
+import { Flex } from './Flex'
+import Button from './Button'
 import { FaBars } from 'react-icons/fa'
 
 const Header = () => (
   <Box>
-    <Box zIndex={1} bg='petrol' height={15} />
-    <Box>
+    <Box p={[3, 4]}>
       <Flex justifyContent='center'>
-        <Box zIndex={1} width={[0.9, 0.8, 0.7]} maxWidth={1200}>
-          <Box mt={[3, 4, 4]}>
+        <Box zIndex={1} width={1}>
+          <Box>
             <Flex flexWrap='wrap' justifyContent='space-between'>
               <Flex alignItems='center'>
-                <Box width={150}>
+                <Box>
                   <Link to='/navigation'>
                     <Text color='petrol'><FaBars size={30} /></Text>
                   </Link>
                 </Box>
               </Flex>
-              <Box mt={[2, 3, 3, 0]} width={[1, 1, 1, 0.5]}>
+              <Box width={[1, 1, 1, 0.5]}>
                 <Link to='/'>
                   <img
                     style={{ width: '100%' }}
