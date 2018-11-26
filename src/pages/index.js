@@ -70,7 +70,7 @@ class Example extends Component {
                     <Carousel
                       autoplay
                       wrapAround
-                      heightMode='current'
+                      heightMode='max'
                       autoplayInterval={2000}
                       renderCenterLeftControls={({ previousSlide }) => (
                         <Box ml={[0, -3]}>
