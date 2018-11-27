@@ -6,11 +6,11 @@ module.exports = {
   siteMetadata: {
     title: 'Goods Office',
     menuTypes: [
-      { link: '/', title: 'Home' },
-      { link: '/menus', title: 'Menus' },
-      { link: '/events', title: 'Events' },
-      { link: '/info', title: 'Info' },
-      { link: '/find-us', title: 'Find us' }
+      { link: '/', title: 'HOME' },
+      { link: '/menus', title: 'MENUS' },
+      { link: '/events', title: 'EVENTS' },
+      { link: '/info', title: 'INFO' },
+      { link: '/find-us', title: 'FIND US' }
     ]
   },
   plugins: [
