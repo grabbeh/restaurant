@@ -31,8 +31,10 @@ const menu = () => {
                   <Flex justifyContent='center'>
                     <Box width={[1,200]} key={title} mr={4} pb={4}>
                       <Link to={link}>
-                        <Button color='petrol' bg='go-light-peach' width={1}>
-                          {title}
+                        <Button bg='go-light-peach' width={1}>
+                          <Text fontWeight='bold' color='petrol'>
+                            {title}
+                          </Text>
                         </Button>
                       </Link>
                     </Box>
