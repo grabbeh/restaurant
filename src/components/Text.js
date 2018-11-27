@@ -23,9 +23,12 @@ const skew = style({
   scale: [10, 20, 30, 40, 50, 60, 70, 80]
 })
 
+export const bold = props =>
+  props.bold ? { fontWeight: props.theme.bold } : null
+
 const StyledText = styled.div`
 transform-origin: 0;
-  ${space} ${fontSize} ${fontWeight} ${color} ${textAlign} ${lineHeight} ${skew};
+  ${space} ${fontSize} ${fontWeight} ${color} ${textAlign} ${lineHeight} ${skew} ${bold};
 `
 
 const Text = ({ children, ...props }) => (
