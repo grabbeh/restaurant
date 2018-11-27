@@ -13,8 +13,8 @@ const events = (props) => {
         <Box p={3}>
          <Text>Events!!!</Text>
          <Box>
-          {edges.map(event => (
-              <Event event={event} />
+          {edges.map(({node}) => (
+              <Event event={node} />
           ))}
         </Box>
         </Box>
