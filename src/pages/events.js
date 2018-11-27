@@ -45,18 +45,13 @@ export const query = graphql`
 `
 
 const Event = ({event}) => {
+  console.log(event)
   let { name, description } = event
   return (
     <Box>
       <Box>
         {name}
        </Box>
-        <Text
-          fontSize={2}
-          dangerouslySetInnerHTML={{
-           __html: description.childMarkdownRemark.html
-          }}
-         />
     </Box>
   )
 }
