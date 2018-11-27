@@ -33,7 +33,7 @@ const menu = () => {
                     <Box width={200} key={title} pb={4}>
                       <Link to={link}>
                         <Button bg='go-light-peach' width={1}>
-                          <Text fontSize={3} fontWeight='bold' color='petrol'>
+                          <Text fontSize={1} fontWeight='bold' color='petrol'>
                             {title}
                           </Text>
                         </Button>
