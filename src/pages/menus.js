@@ -5,6 +5,7 @@ import Box from '../components/Box'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
 import Header from '../components/Header'
+import groupBy from 'lodash/groupBy'
 
 const evening = props => {
   const edges = props.data.allContentfulMenuItem.edges
