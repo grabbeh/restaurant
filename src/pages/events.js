@@ -17,6 +17,9 @@ const events = (props) => {
               <Event event={node} />
           ))}
         </Box>
+        <Box p={3} bg='black'>
+          <Text color='white'> Hello</Text>
+          </Box>
         </Box>
     </Layout>
   </Box>
@@ -47,6 +50,7 @@ export const query = graphql`
 const Event = ({event}) => {
   console.log(event)
   let { name, description } = event
+  console.log(name)
   return (
     <Box>
       <Box>
