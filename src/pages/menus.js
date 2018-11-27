@@ -8,15 +8,13 @@ import Header from '../components/Header'
 import groupBy from 'lodash/groupBy'
 
 const evening = props => {
-  console.log(props)
-  let menuItems = groupBy(
+
+  let { Brunch, Lunch, Drink, Dinner, Breakfast } = groupBy(
     props.data.allContentfulMenuItem.edges.map(i => {
       return i.node
     }),
     'type'
   )
-  
-  let { Brunch, Lunch, Drink, Dinner, Breakfast } = props 
  
   return (
     <Layout bg='go-light-peach'>
