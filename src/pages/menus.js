@@ -90,5 +90,4 @@ const Menu = ({ items, title }) => {
      )
    })}
  </Box>
-
-}
+)}
