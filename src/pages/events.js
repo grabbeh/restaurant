@@ -15,4 +15,5 @@ const events = () => (
   </Box>
  )
 
+export default events
 
