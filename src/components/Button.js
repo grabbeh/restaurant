@@ -53,8 +53,8 @@ Button.displayName = 'Box'
 Button.defaultProps = {
   theme: theme,
   bg: 'go-orange',
-  px: 3,
-  py: 2,
+  px: 4,
+  py: 3,
   borderLeft: '2px solid',
   borderRight: '2px solid',
   borderBottom: '2px solid',
