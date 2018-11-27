@@ -8,9 +8,7 @@ import Header from '../components/Header'
 import groupBy from 'lodash/groupBy'
 
 const evening = props => {
-  const edges = props.data.allContentfulMenuItem.edges
-  const title = edges[0].node.type
-  
+  console.log(props)
   let menuItems = groupBy(
     props.data.allContentfulMenuItem.edges.map(i => {
       return i.node
@@ -27,7 +25,7 @@ const evening = props => {
         <Flex justifyContent='center'>
          <Box width={[1, 450]} zIndex={1}>
           <Menu title='Breakfast' items={Breakfast}/>
-          <Menu title='Brunch' items={Breakfast}/>
+          <Menu title='Brunch' items={Brunch}/>
           <Menu title='Lunch' items={Lunch}/>
           <Menu title='Dinner' items={Dinner}/>
           <Menu title='Drinks' items={Drink}/>
