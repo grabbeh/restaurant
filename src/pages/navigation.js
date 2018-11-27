@@ -30,10 +30,10 @@ const menu = () => {
               {data.site.siteMetadata.menuTypes.map(({ link, title }) => {
                 return (
                   <Flex justifyContent='center'>
-                    <Box width={[1,200]} key={title} mr={4} pb={4}>
+                    <Box key={title} mr={4} pb={4}>
                       <Link to={link}>
                         <Button bg='go-light-peach' width={1}>
-                          <Text fontWeight='bold' color='petrol'>
+                          <Text fontSize={2} fontWeight='bold' color='petrol'>
                             {title}
                           </Text>
                         </Button>
