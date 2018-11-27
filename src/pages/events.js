@@ -4,7 +4,9 @@ import Header from '../components/Header'
 import Box from '../components/Box'
 import Text from '../components/Text'
 
-const events = () => (
+const events = (props) => {
+  console.log(props)
+  return (
   <Box>
     <Layout>
         <Header />
@@ -14,6 +16,26 @@ const events = () => (
     </Layout>
   </Box>
  )
+}
 
 export default events
 
+export const query = graphql`
+   {
+      allContentfulEvent {
+        edges {
+          node {
+            name
+            date
+            description {
+              childMarkdownRemark {
+                html
+              }
+            }
+            recurring
+          }
+        }
+      }
+    }
+  
+`
