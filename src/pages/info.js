@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Box from '../components/Box'
 import Text from '../components/Text'
 
-const events = () => (
+const info = () => (
   <Box>
     <Layout>
         <Header />
@@ -15,3 +15,5 @@ const events = () => (
     </Layout>
   </Box>
  )
+
+export default info
