@@ -48,6 +48,7 @@ const Event = ({event}) => {
   let { name, description } = event
   return (
     <Box>
+    <Box>
     {name}
     </Box>
     <Box>
@@ -58,6 +59,7 @@ const Event = ({event}) => {
        __html: description.childMarkdownRemark.html
       }}
       />
+    </Box>
     </Box>
   )
 }
