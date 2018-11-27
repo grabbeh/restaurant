@@ -25,7 +25,7 @@ class Example extends Component {
             >
               <Flex flexWrap='wrap' justifyContent='space-between'>
                 <Flex alignItems='center'>
-                  <Box width={150}>
+                  <Box mr={5}>
                     <Link to='/navigation'>
                       <Text color='petrol'><FaBars size={30} /></Text>
                     </Link>
