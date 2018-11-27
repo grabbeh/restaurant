@@ -42,7 +42,7 @@ class Example extends Component {
                 <Flex alignItems='center'>
                   <Box mt={[2, 3, 3, 0]}>
                     <Link to='/book'>
-                      <Button width={[1, 150]}>BOOK</Button>
+                      <Button width={[150]}>BOOK</Button>
                     </Link>
                   </Box>
                 </Flex>
