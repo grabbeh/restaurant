@@ -61,36 +61,34 @@ export const query = graphql`
 
 const Menu = ({ items, title }) => {
   return (
-    <Box mx={3} my={4}>
-      <Text fontSize={3} fontWeight='bold'>{title}</Text>
-        {items.map(({ name, price, description  }) => {
-          return (
-            <Box key={name}>
-              <Flex flexWrap='wrap'>
-                <Box width={0.8}>
-                  <Text pt={3} fontSize={2} fontWeight='bold'>
+  <Box mx={3} my={4}>
+   <Text fontSize={3} fontWeight='bold'>{title}</Text>
+     {items.map(({ name, price, description  }) => {
+      return (
+        <Box key={name}>
+          <Flex flexWrap='wrap'>
+             <Box width={0.8}>
+                <Text pt={3} fontSize={2} fontWeight='bold'>
                      {name}
-                   </Text>
-                    {description &&
-                    <Text
+                </Text>
+                {description &&
+                <Text
                       pt={1}
                       pb={2}
                       dangerouslySetInnerHTML={{
                                 __html: description.childMarkdownRemark.html
                       }}
-                     />}
-                    </Box>
-                    <Box width={0.1}>
-                      <Flex justifyContent='flex-end'>
-                        <Text lineHeight='1.7' pt={3}>{`£${price}`}</Text>
-                      </Flex>
-                     </Box>
-                   </Flex>
-                 </Box>
-                )
-             })}
-           </Box>
-        </Box>
-)
+                />}
+              </Box>
+              <Box width={0.1}>
+               <Flex justifyContent='flex-end'>
+                   <Text lineHeight='1.7' pt={3}>{`£${price}`}</Text>
+               </Flex>
+            </Box>
+         </Flex>
+       </Box>
+     )
+   })}
+ </Box>
 
 }
