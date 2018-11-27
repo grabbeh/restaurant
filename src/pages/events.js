@@ -5,13 +5,18 @@ import Box from '../components/Box'
 import Text from '../components/Text'
 
 const events = (props) => {
-  console.log(props)
+  let { edges } = props.data.allContentfulEvent
   return (
   <Box>
     <Layout>
         <Header />
         <Box p={3}>
          <Text>Events!!!</Text>
+         <Box>
+          {edges.map(event => (
+              <Event event={event} />
+          ))}
+        </Box>
         </Box>
     </Layout>
   </Box>
@@ -37,5 +42,22 @@ export const query = graphql`
         }
       }
     }
-  
 `
+
+const Event = ({event}) => {
+  let { name, description } = event
+  return (
+    <Box>
+    {name}
+    </Box>
+    <Box>
+    <Box>
+    <Text
+      fontSize={2}
+      dangerouslySetInnerHTML={{
+       __html: description.childMarkdownRemark.html
+      }}
+      />
+    </Box>
+  )
+}
