@@ -4,6 +4,7 @@ import Box from '../components/Box'
 import { Flex } from '../components/Flex'
 import Header from '../components/Header'
 import Button from '../components/Button'
+import Text from '../components/Text'
 import { Link, graphql, StaticQuery } from 'gatsby'
 
 const menu = () => {
