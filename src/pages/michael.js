@@ -9,7 +9,7 @@ import Text from '../components/Text'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import groupBy from 'lodash/groupBy'
-import Header from '../components/AltHeader'
+import Header from '../components/Header'
 import Img from 'gatsby-image'
 
 const michael = props => {
