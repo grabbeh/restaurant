@@ -10,8 +10,7 @@ const Event = ({ event }) => {
   let { eventImage } = event
   return (
     <Box px={1} py={3} borderBottom='3px solid' borderColor='petrol'>
-      {eventImage && <EventWithImage {...event} />}
-      {!eventImage && <EventText {...event} />}
+      {eventImage ? <EventWithImage {...event} : <EventText {...event} />/>}
     </Box>
   )
 }
