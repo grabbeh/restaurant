@@ -14,7 +14,7 @@ const menu = () => {
       query menuTypeQuery {
         site {
           siteMetadata {
-            menuTypes {
+            navMenuTypes {
               link
               title
             }
