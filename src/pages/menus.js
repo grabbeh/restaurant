@@ -95,7 +95,7 @@ const Menu = ({ items, title }) => {
           width={150}
           py={1}
         >
-          <Text textAlign='center' fontSize={3} fontWeight='bold'>{title}</Text>
+          <Text caps textAlign='center' fontSize={3} fontWeight='bold'>{title}</Text>
         </Box>
       </Flex>
       {items.map(({ name, price, description }) => {
