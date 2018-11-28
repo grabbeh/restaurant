@@ -24,16 +24,16 @@ const menu = () => {
     `}
       render={data => {
         return (
-          <Layout bg='white'>
+          <Layout bg='go-light-peach'>
             <Header />
             <Box py={4}>
               {data.site.siteMetadata.menuTypes.map(({ link, title }) => {
                 return (
                   <Flex justifyContent='center'>
-                    <Box width={200} key={title} pb={4}>
+                    <Box width={130} key={title} pb={4}>
                       <Link to={link}>
-                        <Button bg='go-light-peach' width={1}>
-                          <Text fontSize={1} fontWeight='bold' color='petrol'>
+                        <Button width={1} bg='go-light-peach'>
+                          <Text textAlign='center' color='petrol'>
                             {title}
                           </Text>
                         </Button>
@@ -43,7 +43,6 @@ const menu = () => {
                 )
               })}
             </Box>
-
           </Layout>
         )
       }}

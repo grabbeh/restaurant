@@ -24,11 +24,21 @@ const skew = style({
 })
 
 export const bold = props =>
-  props.bold ? { fontWeight: props.theme.bold } : null
+  (props.bold ? { fontWeight: props.theme.bold } : null)
+
+export const regular = props =>
+  (props.regular ? { fontWeight: props.theme.regular } : null)
+
+export const caps = props =>
+  (props.caps
+    ? {
+      textTransform: 'uppercase'
+    }
+    : null)
 
 const StyledText = styled.div`
 transform-origin: 0;
-  ${space} ${fontSize} ${fontWeight} ${color} ${textAlign} ${lineHeight} ${skew} ${bold};
+  ${space} ${fontSize} ${fontWeight} ${color} ${textAlign} ${lineHeight} ${skew} ${caps} ${regular} ${bold};
 `
 
 const Text = ({ children, ...props }) => (

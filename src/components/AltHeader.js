@@ -26,14 +26,14 @@ const Header = () => (
                     style={{ width: '100%' }}
                     alt='GOODS OFFICE logo'
                     title='GOODS OFFICE logo'
-                    src='/logo.PNG'
+                    src='/go.png'
                   />
                 </Link>
               </Box>
               <Flex alignItems='center'>
                 <Box mt={[2, 3, 3, 0]}>
                   <Link to='book'>
-                    <Button px={[3,4]} py={[2,3]} width={150}>BOOK</Button>
+                    <Button px={[3, 4]} py={[2, 3]} width={150}>BOOK</Button>
                   </Link>
                 </Box>
               </Flex>

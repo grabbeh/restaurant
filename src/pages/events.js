@@ -3,59 +3,71 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Box from '../components/Box'
 import Text from '../components/Text'
+import { Flex } from '../components/Flex'
+import Event from '../components/Event'
+import { graphql } from 'gatsby'
 
-const events = (props) => {
+const events = props => {
   let { edges } = props.data.allContentfulEvent
+  console.log(edges)
   return (
-  <Box>
-    <Layout>
+    <Box>
+      <Layout>
         <Header />
-        <Box p={3}>
-         <Text>Events!!!</Text>
-         <Box>
-          {edges.map(({node}) => (
-              <Event event={node} />
-          ))}
+        <Box my={3}>
+          <Flex justifyContent='center'>
+            <Box p={3} width={[1, 0.7, 0.5]} zIndex={1}>
+              <Box mb={2}>
+                <Text fontSize={3} caps fontWeight='bold' textAlign='center'>
+                  What's on
+                </Text>
+              </Box>
+
+              <Box position='relative'>
+                {edges.map(({ node }) => <Event key={node.id} event={node} />)}
+              </Box>
+
+            </Box>
+            <Box
+              bg='go-light-peach'
+              height={400}
+              mt={300}
+              width='100%'
+              transform={2}
+              position='absolute'
+            />
+          </Flex>
         </Box>
-        <Box p={3} bg='black'>
-          <Text color='white'> Hello</Text>
-          </Box>
-        </Box>
-    </Layout>
-  </Box>
- )
+      </Layout>
+    </Box>
+  )
 }
 
 export default events
 
 export const query = graphql`
    {
-      allContentfulEvent {
+      allContentfulEvent(sort: { fields: [date], order: ASC }) {
         edges {
           node {
             name
-            date
+            date(formatString: "MMMM Do, YYYY, h:mm a")
             description {
               childMarkdownRemark {
                 html
               }
             }
             recurring
+            frequency
+            eventImage {
+              fluid(maxWidth: 1200) {
+                ...GatsbyContentfulFluid
+              }
+              description
+            }
+            id
           }
         }
       }
     }
 `
-
-const Event = ({event}) => {
-  console.log(event)
-  let { name, description } = event
-  console.log(name)
-  return (
-    <Box>
-      <Box>
-        {name}
-       </Box>
-    </Box>
-  )
-}

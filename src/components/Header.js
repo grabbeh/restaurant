@@ -11,37 +11,37 @@ const Header = () => (
     <Box zIndex={1} bg='petrol' height={15} />
     <Box>
       <Flex justifyContent='center'>
-        <Box zIndex={1} width={[0.9, 0.8, 0.7]} maxWidth={1200}>
-          <Box mt={[3, 4, 4]}>
-            <Flex flexWrap='wrap' justifyContent='space-between'>
+        <Box zIndex={1}>
+          <Box p={3} maxWidth={1200} mt={[3, 4, 4]}>
+            <Flex justifyContent='space-between' flexWrap='wrap'>
               <Flex alignItems='center'>
-                <Box width={150}>
+                <Box mr={[20, 50, 100]}>
                   <Link to='/navigation'>
-                    <Text color='petrol'><FaBars size={30} /></Text>
+                    <Text width={20} color='petrol'><FaBars size={30} /></Text>
                   </Link>
                 </Box>
               </Flex>
-              <Box mt={[2, 3, 3, 0]} width={[1, 1, 1, 0.5]}>
+              <Box my={[2, 2, 0]} width={[1, 0.8, 0.5]}>
                 <Link to='/'>
                   <img
                     style={{ width: '100%' }}
                     alt='GOODS OFFICE logo'
                     title='GOODS OFFICE logo'
-                    src='/logo.PNG'
+                    src='/go.png'
                   />
                 </Link>
               </Box>
+
               <Flex alignItems='center'>
-                <Box mt={[2, 3, 3, 0]}>
+                <Box width={130}>
                   <Link to='book'>
-                    <Button width={150}>BOOK </Button>
+                    <Button>BOOK</Button>
                   </Link>
                 </Box>
               </Flex>
             </Flex>
           </Box>
         </Box>
-
       </Flex>
     </Box>
   </Box>

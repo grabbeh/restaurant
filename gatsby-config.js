@@ -28,7 +28,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Montserrat']
+          families: ['Montserrat', 'Montserrat:bold']
         }
       }
     },
@@ -37,7 +37,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-   // 'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
     `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-netlify`
   ]

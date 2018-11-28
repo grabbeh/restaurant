@@ -36,7 +36,14 @@ const StyledButton = styled(
 )`
   outline: 1px solid transparent;
   cursor: pointer;
-  ${space} ${width} ${fontSize} ${color} ${fontWeight} ${borderRadius} ${borders}   ${borders}
+  ${space} 
+  ${width} 
+  ${fontSize} 
+  ${color} 
+  ${fontWeight} 
+  ${borderRadius} 
+  ${borders}   
+  ${borders}
   ${borderBottom}
   ${borderTop}
   ${borderLeft}
@@ -53,15 +60,17 @@ Button.displayName = 'Box'
 Button.defaultProps = {
   theme: theme,
   bg: 'go-orange',
-  px: 4,
-  py: 3,
+  px: 10,
+  py: 12,
   borderLeft: '2px solid',
   borderRight: '2px solid',
   borderBottom: '2px solid',
   borderTop: '2px solid',
   borderColor: 'black',
   fontSize: 1,
+  fontWeight: 'bold',
   color: 'white',
+  width: 1,
   disabled: false
 }
 

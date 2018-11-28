@@ -5,8 +5,8 @@ import Button from '../components/Button'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
 import Layout from '../components/Layout'
-import { FaBars } from 'react-icons/fa'
 import Img from 'gatsby-image'
+import Header from '../components/Header'
 
 class Example extends Component {
   render () {
@@ -14,112 +14,86 @@ class Example extends Component {
     let { headerImage, restaurantDescription } = node
     return (
       <Layout>
+        <Header />
         <Box>
-          <Box zIndex={1} bg='petrol' height={15} />
-          <Flex justifyContent='center'>
-            <Box
-              mt={[3, 4, 4]}
-              zIndex={1}
-              width={[0.9, 0.8, 0.7]}
-              maxWidth={1200}
-            >
-              <Flex flexWrap='wrap' justifyContent='space-between'>
-                <Flex alignItems='center'>
-                  <Box mr={5}>
-                    <Link to='/navigation'>
-                      <Text color='petrol'><FaBars size={30} /></Text>
-                    </Link>
-                  </Box>
-                </Flex>
-                <Box mt={[2, 3, 3, 0]} width={[1, 1, 1, 0.5]}>
-                  <img
-                    style={{ width: '100%' }}
-                    alt='GOODS OFFICE logo'
-                    title='GOODS OFFICE logo'
-                    src='/logo.PNG'
-                  />
-                </Box>
-                <Flex alignItems='center'>
-                  <Box mt={[2, 3, 3, 0]}>
-                    <Link to='/book'>
-                      <Button width={[150]}>BOOK</Button>
-                    </Link>
-                  </Box>
-                </Flex>
-              </Flex>
-              <Flex justifyContent='center'>
-                <Box width={1} mt={4}>
-                  <Img fluid={headerImage.fluid} />
-                </Box>
-              </Flex>
-            </Box>
-          </Flex>
-          <Box
-            bg='go-light-peach'
-            height={500}
-            mt={-100}
-            width='100%'
-            transform={2}
-            position='absolute'
-          />
-          <Box position='relative'>
+          <Box>
             <Flex justifyContent='center'>
-              <Box
-                maxWidth={1200}
-                width={[0.9, 0.7, 0.7, 0.6]}
-                mx={4}
-                my={[3, 4, 4]}
-              >
-                <Flex flexWrap='wrap' justifyContent='space-between'>
-                  <Box maxWidth={1200} width={[1, 0.8, 0.5]}>
-                    <Text fontWeight='bold' fontSize={[2, 3]}>
-                      CAFE, BAR AND RESTAURANT
-                    </Text>
-                    <Box mt={3}>
-                      <Text
-                        fontSize={2}
-                        dangerouslySetInnerHTML={{
-                          __html: restaurantDescription.childMarkdownRemark
-                            .html
-                        }}
-                      />
-                      <Box mt={4}>
-                        <Link to='/menus'><Button>MENUS</Button></Link>
-                      </Box>
-                    </Box>
-                  </Box>
-                  <Box mt={[4, 4, 0]}>
-                    <Box mb={2}><Text fontWeight='bold'>PHONE</Text></Box>
-                    <Box mb={3}><Text>02083407677</Text></Box>
-                    <Box mb={2}><Text fontWeight='bold'>ADDRESS</Text></Box>
-                    <Box mb={3}><Text>1-3 Ferme Park Road, N4 4DS</Text></Box>
-                    <Box mb={2}><Text fontWeight='bold'>HOURS</Text></Box>
-                    <Text>Mon-Sun</Text>
-                    <Text>8:00 am - 11:30 pm</Text>
-                  </Box>
-                </Flex>
-                <Flex justifyContent='space-around'>
-                  <Box mt={4}>
-                    <Link to='/book'>
-                      <Button width={150}>BOOK</Button>
-                    </Link>
+              <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
+                <Flex justifyContent='center'>
+                  <Box width={1}>
+                    <Img fluid={headerImage.fluid} />
                   </Box>
                 </Flex>
               </Box>
             </Flex>
-          </Box>
-          <Flex justifyContent='center'>
-            <Box zIndex={2}>
-              <Text textAlign='center'>
-                Call us or book online with Open Table
-              </Text>
-              <Box my={4}>
-                <Text textAlign='center' fontWeight='bold'>
-                  Reservations required for parties of 6 or more
-                </Text>
+            <Box
+              bg='go-light-peach'
+              height={500}
+              mt={-100}
+              width='100%'
+              transform={2}
+              position='absolute'
+            />
+            <Box position='relative'>
+              <Box p={3}>
+                <Flex justifyContent='center'>
+                  <Box maxWidth={1200} width={[1, 0.7, 0.5]} mx={4}>
+                    <Flex flexWrap='wrap' justifyContent='space-between'>
+                      <Box maxWidth={1200} width={[1, 0.8, 0.5]}>
+                        <Text fontWeight='bold' fontSize={[3, 4]}>
+                          CAFE, BAR AND RESTAURANT
+                        </Text>
+                        <Box mt={3}>
+                          <Text
+                            fontSize={3}
+                            dangerouslySetInnerHTML={{
+                              __html: restaurantDescription.childMarkdownRemark
+                                .html
+                            }}
+                          />
+                          <Box width={130} mt={3}>
+                            <Link to='/menus'>
+                              <Button>MENUS</Button>
+                            </Link>
+                          </Box>
+                        </Box>
+                      </Box>
+                      <Box mt={[4, 4, 0]}>
+                        <Box mb={2}><Text fontWeight='bold'>PHONE</Text></Box>
+                        <Box mb={3}><Text>02083407677</Text></Box>
+                        <Box mb={2}><Text fontWeight='bold'>ADDRESS</Text></Box>
+                        <Box mb={3}>
+                          <Text>1-3 Ferme Park Road, N4 4DS</Text>
+                        </Box>
+                        <Box mb={2}><Text fontWeight='bold'>HOURS</Text></Box>
+                        <Text>Mon-Sun</Text>
+                        <Text>8:00 am - 11:30 pm</Text>
+                      </Box>
+                    </Flex>
+                    <Flex justifyContent='space-around'>
+                      <Box width={130} mt={4}>
+                        <Link to='/book'>
+                          <Button>BOOK</Button>
+                        </Link>
+                      </Box>
+                    </Flex>
+                  </Box>
+                </Flex>
               </Box>
             </Box>
-          </Flex>
+            <Flex justifyContent='center'>
+              <Box zIndex={2}>
+                <Text textAlign='center'>
+                  Call us or book online with Open Table
+                </Text>
+                <Box my={4}>
+                  <Text textAlign='center' fontWeight='bold'>
+                    Reservations required for parties of 6 or more
+                  </Text>
+                </Box>
+              </Box>
+            </Flex>
+          </Box>
         </Box>
       </Layout>
     )
@@ -142,6 +116,7 @@ export const query = graphql`
             fluid(maxWidth: 1200) {
               ...GatsbyContentfulFluid
             }
+            description
           }
           carouselImages {
             fluid(maxWidth: 1200) {
