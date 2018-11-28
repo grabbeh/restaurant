@@ -82,7 +82,7 @@ class Example extends Component {
               </Box>
             </Box>
             <Flex justifyContent='center'>
-              <Box zIndex={2}>
+              <Box mt={2} zIndex={2}>
                 <Text textAlign='center'>
                   Call us or book online with Open Table
                 </Text>
