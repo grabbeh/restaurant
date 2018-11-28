@@ -14,6 +14,7 @@ const evening = props => {
   })
 
   let { Brunch, Lunch, Drink, Dinner, Breakfast } = groupBy(menuItems, 'type')
+  // TO-DO - put food/drink menus in gatsby-config.json
   let menuTypes = ['Breakfast', 'Brunch', 'Lunch', 'Dinner', 'Drinks']
   return (
     <Layout>
