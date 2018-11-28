@@ -9,7 +9,6 @@ import { graphql } from 'gatsby'
 
 const events = props => {
   let { edges } = props.data.allContentfulEvent
-  console.log(edges)
   return (
     <Box>
       <Layout>
