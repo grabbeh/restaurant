@@ -29,7 +29,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Montserrat:300,700']
+          families: ['Montserrat', 'Montserrat:bold']
         }
       }
     },
