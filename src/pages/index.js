@@ -53,7 +53,7 @@ class Example extends Component {
                           />
                           <Box width={130} mt={3}>
                             <Link to='/menus'>
-                              <Button>MENUS</Button>
+                              <Button bg='go-light-peach'><Text color='petrol'>MENUS</Text></Button>
                             </Link>
                           </Box>
                         </Box>
