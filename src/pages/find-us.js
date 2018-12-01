@@ -11,7 +11,7 @@ import Image from '../components/Image'
 
 const findUs = () => {
   const mapUrl =
-    'https://api.mapbox.com/v4/mapbox.high-contrast/pin-l-marker+ff0000(-0.112480,51.573640)/-0.112480,51.573640,15/600x300@2x.png?access_token=pk.eyJ1IjoiZ3JhYmJlaCIsImEiOiI0TTVQdGh3In0.V7O34fiEsepXVdPVxfnOQA'
+    'https://api.mapbox.com/v4/mapbox.high-contrast/pin-l-marker+ff8000(-0.112480,51.573640)/-0.112480,51.573640,15/640x380@2x.png?access_token=pk.eyJ1IjoiZ3JhYmJlaCIsImEiOiI0TTVQdGh3In0.V7O34fiEsepXVdPVxfnOQA'
   const directionsUrl =
     "https://www.google.co.uk/maps/dir//''/@51.5735535,-0.1299459,14z/data=!4m9!4m8!1m0!1m5!1m1!1s0x48761b26736b201b:0x51354017450282c6!2m2!1d-0.112436!2d51.5735877!3e0"
   return (
