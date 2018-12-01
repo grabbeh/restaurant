@@ -29,10 +29,10 @@ const menu = () => {
             <Box py={4}>
               {data.site.siteMetadata.navMenuTypes.map(({ link, title }) => {
                 return (
-                  <Flex justifyContent='center'>
-                    <Box width={130} key={title} pb={4}>
+                  <Flex key={title} justifyContent='center'>
+                    <Box key={title} pb={4}>
                       <Link to={link}>
-                        <Button width={1} bg='go-light-peach'>
+                        <Button bg='go-light-peach'>
                           <Text color='petrol'>
                             {title}
                           </Text>

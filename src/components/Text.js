@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import {
@@ -24,26 +23,22 @@ const skew = style({
 })
 
 export const bold = props =>
-  (props.bold ? { fontWeight: props.theme.bold } : null)
+  props.bold ? { fontWeight: props.theme.bold } : null
 
 export const regular = props =>
-  (props.regular ? { fontWeight: props.theme.regular } : null)
+  props.regular ? { fontWeight: props.theme.regular } : null
 
 export const caps = props =>
-  (props.caps
+  props.caps
     ? {
       textTransform: 'uppercase'
     }
-    : null)
+    : null
 
-const StyledText = styled.div`
+const Text = styled.div`
 transform-origin: 0;
   ${space} ${fontSize} ${fontWeight} ${color} ${textAlign} ${lineHeight} ${skew} ${caps} ${regular} ${bold};
 `
-
-const Text = ({ children, ...props }) => (
-  <StyledText {...props}>{children}</StyledText>
-)
 
 Text.displayName = 'Text'
 
@@ -69,5 +64,9 @@ Text.defaultProps = {
   theme: theme,
   color: 'petrol'
 }
+
+Text.span = Text.withComponent('span')
+Text.p = Text.withComponent('p')
+Text.s = Text.withComponent('s')
 
 export default Text

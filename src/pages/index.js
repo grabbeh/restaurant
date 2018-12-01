@@ -38,40 +38,55 @@ class Example extends Component {
               <Box p={3}>
                 <Flex justifyContent='center'>
                   <Box maxWidth={1200} width={[1, 0.7, 0.5]} mx={4}>
-                    <Flex flexWrap='wrap' justifyContent='space-between'>
-                      <Box maxWidth={1200} width={[1, 0.8, 0.5]}>
-                        <Text fontWeight='bold' fontSize={[3, 4]}>
-                          CAFE, BAR AND RESTAURANT
-                        </Text>
-                        <Box mt={3}>
-                          <Text
-                            fontSize={3}
-                            dangerouslySetInnerHTML={{
-                              __html: restaurantDescription.childMarkdownRemark
-                                .html
-                            }}
-                          />
-                          <Box width={130} mt={3}>
-                            <Link to='/menus'>
-                              <Button bg='go-light-peach'><Text color='petrol'>MENUS</Text></Button>
-                            </Link>
+                    <Box>
+                      <Flex flexWrap='wrap' justifyContent='space-between'>
+                        <Box maxWidth={1200} width={[1, 0.8, 0.5]}>
+                          <Text fontWeight='bold' fontSize={[3, 4]}>
+                            FRIENDLY NEIGHBOURHOOD CAFE, BAR AND RESTAURANT
+                          </Text>
+                          <Box mt={3}>
+                            <Text
+                              fontSize={3}
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  restaurantDescription.childMarkdownRemark
+                                    .html
+                              }}
+                            />
+                            <Box width={130} mt={3}>
+                              <Link to='/menus'>
+                                <Button bg='go-light-peach'>
+                                  <Text color='petrol'>MENUS</Text>
+                                </Button>
+                              </Link>
+                            </Box>
                           </Box>
                         </Box>
-                      </Box>
-                      <Box mt={[4, 4, 0]}>
-                        <Box mb={2}><Text fontWeight='bold'>PHONE</Text></Box>
-                        <Box mb={3}><Text>02083407677</Text></Box>
-                        <Box mb={2}><Text fontWeight='bold'>ADDRESS</Text></Box>
-                        <Box mb={3}>
-                          <Text>1-3 Ferme Park Road, N4 4DS</Text>
+                        <Box width={[1, 0.8, 0.4]} mt={[4, 4, 0]}>
+                          <Box mb={2}>
+                            <Text fontWeight='bold'>PHONE</Text>
+                          </Box>
+                          <Box mb={3}>
+                            <Text>02083407677</Text>
+                          </Box>
+                          <Box mb={2}>
+                            <Text fontWeight='bold'>ADDRESS</Text>
+                          </Box>
+                          <Box mb={3}>
+                            <Text>
+                              1-3 Ferme Park Road, Stroud Green, London, N4 4DS
+                            </Text>
+                          </Box>
+                          <Box mb={2}>
+                            <Text fontWeight='bold'>HOURS</Text>
+                          </Box>
+                          <Text>Mon-Sun</Text>
+                          <Text>8:00 am - 11:30 pm</Text>
                         </Box>
-                        <Box mb={2}><Text fontWeight='bold'>HOURS</Text></Box>
-                        <Text>Mon-Sun</Text>
-                        <Text>8:00 am - 11:30 pm</Text>
-                      </Box>
-                    </Flex>
+                      </Flex>
+                    </Box>
                     <Flex justifyContent='space-around'>
-                      <Box width={130} mt={4}>
+                      <Box mt={4}>
                         <Link to='/book'>
                           <Button>BOOK</Button>
                         </Link>
@@ -82,15 +97,10 @@ class Example extends Component {
               </Box>
             </Box>
             <Flex justifyContent='center'>
-              <Box mt={2} zIndex={2}>
-                <Text textAlign='center'>
-                  Call us or book online with Open Table
+              <Box p={3} mb={3} zIndex={2}>
+                <Text textAlign='center' fontWeight='bold'>
+                  Reservations required for parties of 6 or more
                 </Text>
-                <Box my={4}>
-                  <Text textAlign='center' fontWeight='bold'>
-                    Reservations required for parties of 6 or more
-                  </Text>
-                </Box>
               </Box>
             </Flex>
           </Box>
@@ -103,10 +113,10 @@ class Example extends Component {
 export default Example
 
 export const query = graphql`
-    {
+  {
     allContentfulHomePage {
       edges {
-        node {  
+        node {
           restaurantDescription {
             childMarkdownRemark {
               html
@@ -114,7 +124,7 @@ export const query = graphql`
           }
           headerImage {
             fluid(maxWidth: 1200) {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_noBase64
             }
             description
           }
@@ -122,5 +132,4 @@ export const query = graphql`
       }
     }
   }
-  
 `

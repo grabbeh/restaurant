@@ -16,9 +16,19 @@ a {
  outline: 0; 
 }
 
-p {
-  margin: 0;
+ul {
   padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li:first-child {
+  margin-top: 20px;
+}
+
+p {
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 button {
@@ -39,8 +49,9 @@ a:active, a:focus, a:visited {
   border: none;
   -moz-outline-style: none;
   text-decoration: none;
-  color: white;
+  color: inherit;
 }
+
 
 
   img {

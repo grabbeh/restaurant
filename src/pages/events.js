@@ -13,7 +13,7 @@ const events = props => {
     <Box>
       <Layout>
         <Header />
-        <Box my={3}>
+        <Box>
           <Flex justifyContent='center'>
             <Box p={3} width={[1, 0.7, 0.5]} zIndex={1}>
               <Box mb={2}>

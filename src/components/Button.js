@@ -58,6 +58,7 @@ const Button = ({ children, ...props }) => (
 Button.displayName = 'Box'
 
 Button.defaultProps = {
+  borderRadius: 1,
   theme: theme,
   bg: 'go-orange',
   px: 10,
@@ -70,7 +71,7 @@ Button.defaultProps = {
   fontSize: 1,
   fontWeight: 'bold',
   color: 'white',
-  width: 1,
+  width: 130,
   disabled: false
 }
 

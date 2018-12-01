@@ -8,7 +8,7 @@ import { FaBars } from 'react-icons/fa'
 
 const Header = () => (
   <Box>
-    <Box zIndex={1} bg='petrol' height={15} />
+    <Box zIndex={1} bg='petrol' height={10} />
     <Box>
       <Flex justifyContent='center'>
         <Box zIndex={1}>
@@ -31,9 +31,8 @@ const Header = () => (
                   />
                 </Link>
               </Box>
-
               <Flex alignItems='center'>
-                <Box width={130}>
+                <Box>
                   <Link to='book'>
                     <Button>BOOK</Button>
                   </Link>

@@ -5,47 +5,55 @@ import Box from '../components/Box'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
 import Header from '../components/Header'
-import groupBy from 'lodash/groupBy'
 
 const evening = props => {
-  let { edges } = props.data.allContentfulMenuItem
-  let menuItems = edges.map(i => {
-    return i.node
-  })
-
-  let { Brunch, Lunch, Drink, Dinner, Breakfast } = groupBy(menuItems, 'type')
-  // TO-DO - put food/drink menus in gatsby-config.json
-  let menuTypes = ['Breakfast', 'Brunch', 'Lunch', 'Dinner', 'Drinks']
+  let { menus } = props.data.allContentfulMenuHolder.edges[0].node
   return (
     <Layout>
       <Header />
-      <Box p={3} mt={3}>
+      <Box p={3}>
         <Flex justifyContent='center'>
-          <Box width={[1, 0.7, 0.5]} zIndex={1}>
-            <Text textAlign='center' caps fontWeight='bold' fontSize={2}>
-              Menus
-            </Text>
-            <Box my={4}>
+          <Box width={[1, 0.8]} zIndex={1}>
+            <a href='#home' name='home'>
+              <div id='home' />
+              <Text textAlign='center' caps fontWeight='bold' fontSize={3}>
+                Menus
+              </Text>
+            </a>
+            <Box mb={4} mt={3}>
               <Flex justifyContent='center' flexWrap='wrap'>
-                {menuTypes.map(menu => (
+                {menus.map(m => (
                   <Box
+                    key={m.name}
                     px={3}
-                    py={2}
+                    mb={2}
                     borderRight='2px solid'
                     borderColor='petrol'
                   >
-                    <Text caps fontWeight='bold'>
-                      {menu}
-                    </Text>
+                    <a href={`#${m.link}`}>
+                      <Text caps fontWeight='bold'>
+                        {m.name}
+                      </Text>
+                    </a>
                   </Box>
                 ))}
               </Flex>
             </Box>
-            <Menu title='Breakfast' items={Breakfast} />
-            <Menu title='Brunch' items={Brunch} />
-            <Menu title='Lunch' items={Lunch} />
-            <Menu title='Dinner' items={Dinner} />
-            <Menu title='Drinks' items={Drink} />
+            <Box>
+              {menus.map(m => {
+                return (
+                  <Box key={m.name}>
+                    <a href={`#${m.link}`} name={m.link}>
+                      <div id={m.link} />
+                    </a>
+                    <MarkDownMenu
+                      title={m.name}
+                      html={m.fullMenu.childMarkdownRemark.html}
+                    />
+                  </Box>
+                )
+              })}
+            </Box>
           </Box>
         </Flex>
       </Box>
@@ -57,6 +65,15 @@ const evening = props => {
         transform={2}
         position='absolute'
       />
+      <Box position='fixed' bottom={0} right={0} p={3} zIndex={4}>
+        <Flex justifyContent='flex-end'>
+          <a href='#home'>
+            <Text caps fontWeight='bold'>
+              Top
+            </Text>
+          </a>
+        </Flex>
+      </Box>
     </Layout>
   )
 }
@@ -64,28 +81,41 @@ const evening = props => {
 export default evening
 
 export const query = graphql`
-   {
-      allContentfulMenuItem {
-        edges {
-          node {
+  {
+    allContentfulMenuHolder {
+      edges {
+        node {
+          menus {
             name
-            price
-            description {
+            link
+            fullMenu {
               childMarkdownRemark {
                 html
               }
             }
-            type
           }
         }
       }
     }
-  
+  }
 `
 
-const Menu = ({ items, title }) => {
+const MarkDownMenu = ({ html, title }) => {
   return (
-    <Box mx={3} mt={3} mb={4}>
+    <MenuHolder title={title}>
+      <Text
+        pb={2}
+        dangerouslySetInnerHTML={{
+          __html: html
+        }}
+      />
+    </MenuHolder>
+  )
+}
+
+const MenuHolder = ({ title, children }) => {
+  return (
+    <Box mx={3} mt={4}>
       <Flex justifyContent='center'>
         <Box
           borderLeft='2px solid'
@@ -93,17 +123,31 @@ const Menu = ({ items, title }) => {
           borderRight='2px solid'
           borderBottom='2px solid'
           borderColor='petrol'
-          width={150}
           py={1}
+          px={2}
         >
-          <Text caps textAlign='center' fontSize={3} fontWeight='bold'>{title}</Text>
+          <Text caps textAlign='center' fontSize={3} fontWeight='bold'>
+            {title}
+          </Text>
         </Box>
       </Flex>
+      <Flex justifyContent='center'>
+        <Box width={[1, 0.7, 0.5]}>{children}</Box>
+      </Flex>
+    </Box>
+  )
+}
+
+// Used where menu is formed of multiple items rather than markdown
+/*
+const ItemsMenu = ({ items, title }) => {
+  return (
+    <MenuHolder title={title}>
       {items.map(({ name, price, description }) => {
         return (
           <Box key={name}>
             <Flex flexWrap='wrap'>
-              <Box width={0.8}>
+              <Box width={[1, 0.7, 0.5]}>
                 <Text pt={3} fontSize={2} fontWeight='bold'>
                   {name}
                 </Text>
@@ -125,6 +169,6 @@ const Menu = ({ items, title }) => {
           </Box>
         )
       })}
-    </Box>
+    </MenuHolder>
   )
-}
+} */
