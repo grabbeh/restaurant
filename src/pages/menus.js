@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Box from '../components/Box'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
 import Header from '../components/Header'
+import Link from '../components/Link'
 
 const evening = props => {
   let { menus } = props.data.allContentfulMenuHolder.edges[0].node
@@ -22,34 +23,24 @@ const evening = props => {
             </a>
             <Box mb={4} mt={3}>
               <Flex justifyContent='center' flexWrap='wrap'>
-                {menus.map(m => (
-                  <Box
-                    key={m.name}
-                    px={3}
-                    mb={2}
-                    borderRight='2px solid'
-                    borderColor='petrol'
-                  >
-                    <a href={`#${m.link}`}>
-                      <Text caps fontWeight='bold'>
-                        {m.name}
-                      </Text>
-                    </a>
-                  </Box>
-                ))}
+                <MenuList menus={menus} />
               </Flex>
             </Box>
             <Box>
               {menus.map(m => {
+                let {
+                  link,
+                  name,
+                  fullMenu: {
+                    childMarkdownRemark: { html }
+                  }
+                } = m
                 return (
                   <Box key={m.name}>
-                    <a href={`#${m.link}`} name={m.link}>
-                      <div id={m.link} />
-                    </a>
-                    <MarkDownMenu
-                      title={m.name}
-                      html={m.fullMenu.childMarkdownRemark.html}
-                    />
+                    <Link href={`#${link}`} name={link}>
+                      <div id={link} />
+                    </Link>
+                    <MarkDownMenu title={name} html={html} />
                   </Box>
                 )
               })}
@@ -99,6 +90,26 @@ export const query = graphql`
     }
   }
 `
+
+const MenuList = ({ menus }) => (
+  <Fragment>
+    {menus.map(m => (
+      <Box
+        key={m.name}
+        px={3}
+        mb={2}
+        borderRight='2px solid'
+        borderColor='petrol'
+      >
+        <a href={`#${m.link}`}>
+          <Text caps fontWeight='bold'>
+            {m.name}
+          </Text>
+        </a>
+      </Box>
+    ))}
+  </Fragment>
+)
 
 const MarkDownMenu = ({ html, title }) => {
   return (

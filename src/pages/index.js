@@ -7,6 +7,7 @@ import Text from '../components/Text'
 import Layout from '../components/Layout'
 import Img from 'gatsby-image'
 import Header from '../components/Header'
+import ContactDetails from '../components/ContactDetails'
 
 class Example extends Component {
   render () {
@@ -16,94 +17,71 @@ class Example extends Component {
       <Layout>
         <Header />
         <Box>
-          <Box>
-            <Flex justifyContent='center'>
-              <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
-                <Flex justifyContent='center'>
-                  <Box width={1}>
-                    <Img fluid={headerImage.fluid} />
-                  </Box>
-                </Flex>
+          <Flex justifyContent='center'>
+            <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
+              <Box width={1}>
+                <Img fluid={headerImage.fluid} />
               </Box>
-            </Flex>
-            <Box
-              bg='go-light-peach'
-              height={500}
-              mt={-100}
-              width='100%'
-              transform={2}
-              position='absolute'
-            />
-            <Box position='relative'>
-              <Box p={3}>
-                <Flex justifyContent='center'>
-                  <Box maxWidth={1200} width={[1, 0.7, 0.5]} mx={4}>
-                    <Box>
-                      <Flex flexWrap='wrap' justifyContent='space-between'>
-                        <Box maxWidth={1200} width={[1, 0.8, 0.5]}>
-                          <Text fontWeight='bold' fontSize={[3, 4]}>
-                            FRIENDLY NEIGHBOURHOOD CAFE, BAR AND RESTAURANT
-                          </Text>
-                          <Box mt={3}>
-                            <Text
-                              fontSize={3}
-                              dangerouslySetInnerHTML={{
-                                __html:
-                                  restaurantDescription.childMarkdownRemark
-                                    .html
-                              }}
-                            />
-                            <Box width={130} mt={3}>
-                              <Link to='/menus'>
-                                <Button bg='go-light-peach'>
-                                  <Text color='petrol'>MENUS</Text>
-                                </Button>
-                              </Link>
-                            </Box>
+            </Box>
+          </Flex>
+          <Box
+            bg='go-light-peach'
+            height={500}
+            mt={-100}
+            width='100%'
+            transform={2}
+            position='absolute'
+          />
+          <Box position='relative'>
+            <Box p={3}>
+              <Flex justifyContent='center'>
+                <Box maxWidth={1200} width={[1, 0.7, 0.5]} mx={4}>
+                  <Box>
+                    <Flex flexWrap='wrap' justifyContent='space-between'>
+                      <Box maxWidth={1200} width={[1, 0.8, 0.7]}>
+                        <Text fontWeight='bold' fontSize={[3, 4]}>
+                          FRIENDLY NEIGHBOURHOOD CAFE, BAR AND RESTAURANT
+                        </Text>
+                        <Box mt={3}>
+                          <Text
+                            fontSize={3}
+                            dangerouslySetInnerHTML={{
+                              __html:
+                                restaurantDescription.childMarkdownRemark.html
+                            }}
+                          />
+                          <Box width={130} mt={3}>
+                            <Link to='/menus'>
+                              <Button bg='go-light-peach'>
+                                <Text color='petrol'>MENUS</Text>
+                              </Button>
+                            </Link>
                           </Box>
                         </Box>
-                        <Box width={[1, 0.8, 0.4]} mt={[4, 4, 0]}>
-                          <Box mb={2}>
-                            <Text fontWeight='bold'>PHONE</Text>
-                          </Box>
-                          <Box mb={3}>
-                            <Text>02083407677</Text>
-                          </Box>
-                          <Box mb={2}>
-                            <Text fontWeight='bold'>ADDRESS</Text>
-                          </Box>
-                          <Box mb={3}>
-                            <Text>
-                              1-3 Ferme Park Road, Stroud Green, London, N4 4DS
-                            </Text>
-                          </Box>
-                          <Box mb={2}>
-                            <Text fontWeight='bold'>HOURS</Text>
-                          </Box>
-                          <Text>Mon-Sun</Text>
-                          <Text>8:00 am - 11:30 pm</Text>
-                        </Box>
-                      </Flex>
-                    </Box>
-                    <Flex justifyContent='space-around'>
-                      <Box mt={4}>
-                        <Link to='/book'>
-                          <Button>BOOK</Button>
-                        </Link>
+                      </Box>
+                      <Box width={[1, 0.8, 0.25]} mt={[4, 4, 0]}>
+                        <ContactDetails />
                       </Box>
                     </Flex>
                   </Box>
-                </Flex>
-              </Box>
+                  <Flex justifyContent='space-around'>
+                    <Box mt={5}>
+                      <Link to='/book'>
+                        <Button>BOOK</Button>
+                      </Link>
+                    </Box>
+                  </Flex>
+                </Box>
+              </Flex>
             </Box>
-            <Flex justifyContent='center'>
-              <Box p={3} mb={3} zIndex={2}>
-                <Text textAlign='center' fontWeight='bold'>
-                  Reservations required for parties of 6 or more
-                </Text>
-              </Box>
-            </Flex>
           </Box>
+          <Flex justifyContent='center'>
+            <Box p={3} mb={3} zIndex={2}>
+              <Text textAlign='center' fontWeight='bold'>
+                Reservations required for parties of 6 or more
+              </Text>
+            </Box>
+          </Flex>
         </Box>
       </Layout>
     )

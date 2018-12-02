@@ -8,6 +8,8 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import ExternalLink from '../components/Link'
 import Image from '../components/Image'
+import ContactDetails from '../components/ContactDetails'
+import TravelDetails from '../components/TravelDetails'
 
 const findUs = () => {
   const mapUrl =
@@ -18,94 +20,59 @@ const findUs = () => {
     <Layout>
       <Header />
       <Box>
-        <Box>
-          <Flex justifyContent='center'>
-            <Box px={3} pt={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
-              <Flex justifyContent='center'>
-                <Box>
-                  <Image src={mapUrl} />
-                  <Flex justifyContent='flex-end'>
-                    <Box>
-                      <ExternalLink href='https://www.mapbox.com/map-feedback/'>
-                        <Text.span fontSize={1} mr={2}>
-                          © Mapbox
-                        </Text.span>
-                      </ExternalLink>
-                      <ExternalLink href='https://www.openstreetmap.org/copyright'>
-                        <Text.span fontSize={1}>© OpenStreetMap</Text.span>
-                      </ExternalLink>
-                    </Box>
-                  </Flex>
-                </Box>
-              </Flex>
-            </Box>
-          </Flex>
-          <Box
-            bg='go-light-peach'
-            height={500}
-            mt={-100}
-            width='100%'
-            transform={2}
-            position='absolute'
-          />
-          <Box position='relative'>
-            <Box p={3}>
-              <Flex justifyContent='center'>
-                <Box maxWidth={1200} width={[1, 0.7, 0.5]} mb={4}>
-                  <Flex justifyContent='center'>
-                    <Box mb={4}>
-                      <ExternalLink target='_blank' href={directionsUrl}>
-                        <Button color='petrol' bg='go-light-peach' width={150}>
-                          GET DIRECTIONS
-                        </Button>
-                      </ExternalLink>
-                    </Box>
-                  </Flex>
-                  <Flex flexWrap='wrap' justifyContent='space-between'>
-                    <Box maxWidth={1200} width={[1, 0.8, 0.5]}>
-                      <Text mb={2} caps fontWeight='bold'>
-                        Nearest tube
-                      </Text>
-                      <Text mb={3}>Finsbury Park</Text>
-                      <Text mb={2} caps fontWeight='bold'>
-                        Nearest overground
-                      </Text>
-                      <Text mb={3}>Crouch Hill</Text>
-                      <Text mb={2} caps fontWeight='bold'>
-                        Buses
-                      </Text>
-                      <Text mb={3}>W3 from Finsbury Park</Text>
-                    </Box>
-                    <Box mt={[4, 4, 0]}>
-                      <Box mb={2}>
-                        <Text fontWeight='bold'>PHONE</Text>
-                      </Box>
-                      <Box mb={3}>
-                        <Text>02083407677</Text>
-                      </Box>
-                      <Box mb={2}>
-                        <Text fontWeight='bold'>ADDRESS</Text>
-                      </Box>
-                      <Box mb={3}>
-                        <Text>1-3 Ferme Park Road, N4 4DS</Text>
-                      </Box>
-                      <Box mb={2}>
-                        <Text fontWeight='bold'>HOURS</Text>
-                      </Box>
-                      <Text>Mon-Sun</Text>
-                      <Text>8:00 am - 11:30 pm</Text>
-                    </Box>
-                  </Flex>
-                  <Flex justifyContent='space-around'>
-                    <Box width={130} my={4}>
-                      <Link to='/book'>
-                        <Button>BOOK</Button>
-                      </Link>
-                    </Box>
-                  </Flex>
-                </Box>
-              </Flex>
-            </Box>
+        <Flex justifyContent='center'>
+          <Box px={3} pt={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
+            <Image src={mapUrl} />
+            <Flex justifyContent='flex-end'>
+              <ExternalLink href='https://www.mapbox.com/map-feedback/'>
+                <Text.span fontSize={1} mr={2}>
+                  © Mapbox
+                </Text.span>
+              </ExternalLink>
+              <ExternalLink href='https://www.openstreetmap.org/copyright'>
+                <Text.span fontSize={1}>© OpenStreetMap</Text.span>
+              </ExternalLink>
+            </Flex>
+          </Box>
+        </Flex>
+        <Box
+          bg='go-light-peach'
+          height={500}
+          mt={-100}
+          width='100%'
+          transform={2}
+          position='absolute'
+        />
+        <Box position='relative'>
+          <Box p={3}>
+            <Flex justifyContent='center'>
+              <Box maxWidth={1200} width={[1, 0.7, 0.5]} mb={4}>
+                <Flex justifyContent='center'>
+                  <Box mb={4}>
+                    <ExternalLink target='_blank' href={directionsUrl}>
+                      <Button color='petrol' bg='go-light-peach' width={150}>
+                        GET DIRECTIONS
+                      </Button>
+                    </ExternalLink>
+                  </Box>
+                </Flex>
+                <Flex flexWrap='wrap' justifyContent='space-between'>
+                  <Box width={[1, 0.8, 0.7]}>
+                    <TravelDetails />
+                  </Box>
+                  <Box width={[1, 0.8, 0.3]} mt={[4, 4, 0]}>
+                    <ContactDetails />
+                  </Box>
+                </Flex>
+                <Flex justifyContent='space-around'>
+                  <Box width={130} my={4}>
+                    <Link to='/book'>
+                      <Button>BOOK</Button>
+                    </Link>
+                  </Box>
+                </Flex>
+              </Box>
+            </Flex>
           </Box>
         </Box>
       </Box>

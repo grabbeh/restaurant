@@ -22,10 +22,6 @@ ul {
   list-style: none;
 }
 
-li:first-child {
-  margin-top: 20px;
-}
-
 p {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -52,15 +48,3 @@ a:active, a:focus, a:visited {
   color: inherit;
 }
 
-
-
-  img {
-    object-fit: cover;
-    width: 100%;
-  }
-
-@media screen and (min-width: 30em) {
-  .dn-ns {
-    display: none;
-  }
-}
