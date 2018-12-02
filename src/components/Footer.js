@@ -13,17 +13,17 @@ const Footer = () => (
       <Flex justifyContent='space-between' flexWrap='wrap'>
         <Span color='white'>
           <Span mr={3}>
-            <ExternalLink src='https://instagram.com'>
-              <FaInstagram size={20} />
+            <ExternalLink href='https://instagram.com'>
+              <FaInstagram style={{ color: 'white' }} size={20} />
             </ExternalLink>
           </Span>
           <Span mr={3}>
-            <ExternalLink src='https://facebook.com'>
-              <FaFacebookF size={20} />
+            <ExternalLink href='https://facebook.com/goodsofficeN4/'>
+              <FaFacebookF style={{ color: 'white' }} size={20} />
             </ExternalLink>
           </Span>
-          <ExternalLink src='https://twitter.com'>
-            <FaTwitter size={20} />
+          <ExternalLink href='https://twitter.com/goodsofficeN4'>
+            <FaTwitter style={{ color: 'white' }} size={20} />
           </ExternalLink>
         </Span>
         <Span>
