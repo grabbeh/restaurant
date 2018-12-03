@@ -56,7 +56,7 @@ const evening = props => {
         transform={2}
         position='absolute'
       />
-      <Box bg='petrol' position='fixed' bottom={0} right={0} p={3} zIndex={4}>
+      <Box bg='petrol' position='fixed' bottom={0} right={0} px={3} py={2} zIndex={4}>
         <Flex justifyContent='flex-end'>
           <a href='#home'>
             <Text color='white' caps fontWeight='bold'>
