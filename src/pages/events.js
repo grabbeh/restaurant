@@ -21,11 +21,11 @@ const events = props => {
                   What's on
                 </Text>
               </Box>
-
               <Box position='relative'>
-                {edges.map(({ node }) => <Event key={node.id} event={node} />)}
+                {edges.map(({ node }) => (
+                  <Event key={node.id} event={node} />
+                ))}
               </Box>
-
             </Box>
             <Box
               bg='go-light-peach'
@@ -45,28 +45,28 @@ const events = props => {
 export default events
 
 export const query = graphql`
-   {
-      allContentfulEvent(sort: { fields: [date], order: ASC }) {
-        edges {
-          node {
-            name
-            date(formatString: "MMMM Do, YYYY, h:mm a")
-            description {
-              childMarkdownRemark {
-                html
-              }
+  {
+    allContentfulEvent(sort: { fields: [date], order: ASC }) {
+      edges {
+        node {
+          name
+          date(formatString: "MMMM Do, YYYY, h:mm a")
+          description {
+            childMarkdownRemark {
+              html
             }
-            recurring
-            frequency
-            eventImage {
-              fluid(maxWidth: 1200) {
-                ...GatsbyContentfulFluid
-              }
-              description
-            }
-            id
           }
+          recurring
+          frequency
+          eventImage {
+            fluid(maxWidth: 1200) {
+              ...GatsbyContentfulFluid
+            }
+            description
+          }
+          id
         }
       }
     }
+  }
 `

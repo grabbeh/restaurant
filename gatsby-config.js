@@ -11,8 +11,7 @@ module.exports = {
       { link: '/events', title: 'EVENTS' },
       { link: '/info', title: 'INFO' },
       { link: '/find-us', title: 'FIND US' }
-    ],
-    foodMenuTypes: ['Breakfast', 'Brunch', 'Lunch', 'Dinner', 'Drinks']
+    ]
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -36,10 +35,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
-    `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-netlify`
   ]
 }

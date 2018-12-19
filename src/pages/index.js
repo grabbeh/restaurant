@@ -5,11 +5,11 @@ import Button from '../components/Button'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
 import Layout from '../components/Layout'
-import Img from 'gatsby-image'
+import Img from '../components/ImagePolyfill'
 import Header from '../components/Header'
 import ContactDetails from '../components/ContactDetails'
 
-class Example extends Component {
+class Home extends Component {
   render () {
     let { node } = this.props.data.allContentfulHomePage.edges[0]
     let { headerImage, restaurantDescription } = node
@@ -20,7 +20,7 @@ class Example extends Component {
           <Flex justifyContent='center'>
             <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
               <Box width={1}>
-                <Img fluid={headerImage.fluid} />
+                <Img {...this.props} fluid={headerImage.fluid} />
               </Box>
             </Box>
           </Flex>
@@ -88,7 +88,7 @@ class Example extends Component {
   }
 }
 
-export default Example
+export default Home
 
 export const query = graphql`
   {

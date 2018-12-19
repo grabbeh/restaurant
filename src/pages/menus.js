@@ -114,7 +114,7 @@ const MenuList = ({ menus }) => (
 const MarkDownMenu = ({ html, title }) => {
   return (
     <MenuHolder title={title}>
-      <Text
+      <Box
         pb={2}
         dangerouslySetInnerHTML={{
           __html: html
@@ -148,38 +148,3 @@ const MenuHolder = ({ title, children }) => {
     </Box>
   )
 }
-
-// Used where menu is formed of multiple items rather than markdown
-/*
-const ItemsMenu = ({ items, title }) => {
-  return (
-    <MenuHolder title={title}>
-      {items.map(({ name, price, description }) => {
-        return (
-          <Box key={name}>
-            <Flex flexWrap='wrap'>
-              <Box width={[1, 0.7, 0.5]}>
-                <Text pt={3} fontSize={2} fontWeight='bold'>
-                  {name}
-                </Text>
-                {description &&
-                  <Text
-                    pt={1}
-                    pb={2}
-                    dangerouslySetInnerHTML={{
-                      __html: description.childMarkdownRemark.html
-                    }}
-                  />}
-              </Box>
-              <Box width={0.1}>
-                <Flex justifyContent='flex-end'>
-                  <Text lineHeight='1.7' pt={3}>{`£${price}`}</Text>
-                </Flex>
-              </Box>
-            </Flex>
-          </Box>
-        )
-      })}
-    </MenuHolder>
-  )
-} */
