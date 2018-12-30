@@ -26,8 +26,8 @@ class Home extends Component {
           </Flex>
           <Box
             bg='go-light-peach'
-            height={500}
-            mt={-100}
+            height={450}
+            mt={-80}
             width='100%'
             transform={2}
             position='absolute'
@@ -39,17 +39,17 @@ class Home extends Component {
                   <Box>
                     <Flex flexWrap='wrap' justifyContent='space-between'>
                       <Box maxWidth={1200} width={[1, 0.8, 0.7]}>
-                        <Text fontWeight='bold' fontSize={[3, 4]}>
-                          FRIENDLY NEIGHBOURHOOD CAFE, BAR AND RESTAURANT
-                        </Text>
-                        <Box mt={3}>
+                        <Box mt={-30}>
                           <Text
-                            fontSize={3}
+                            fontWeight='bold'
+                            fontSize={4}
                             dangerouslySetInnerHTML={{
                               __html:
                                 restaurantDescription.childMarkdownRemark.html
                             }}
                           />
+                        </Box>
+                        <Box mt={3}>
                           <Box width={130} mt={3}>
                             <Link to='/menus'>
                               <Button bg='go-light-peach'>
@@ -65,7 +65,7 @@ class Home extends Component {
                     </Flex>
                   </Box>
                   <Flex justifyContent='space-around'>
-                    <Box mt={5}>
+                    <Box mt={4}>
                       <Link to='/book'>
                         <Button>BOOK</Button>
                       </Link>

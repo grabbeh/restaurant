@@ -9,14 +9,14 @@ const Layout = props => {
   return (
     <StaticQuery
       query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
           }
         }
-      }
-    `}
+      `}
       render={data => {
         return (
           <Fragment>
@@ -28,6 +28,7 @@ const Layout = props => {
               ]}
             >
               <html lang='en' />
+              <script src='https://cdn.polyfill.io/v2/polyfill.min.js' />
             </Helmet>
             <Box
               bg={props.bg}
@@ -41,7 +42,6 @@ const Layout = props => {
               }}
             >
               {props.children}
-
             </Box>
             <Footer />
           </Fragment>
