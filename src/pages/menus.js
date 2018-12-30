@@ -12,7 +12,7 @@ const evening = props => {
   return (
     <Layout>
       <Header />
-      <Box p={3}>
+      <Box p={[1,3]}>
         <Flex justifyContent='center'>
           <Box width={[1, 0.8]} zIndex={1}>
             <a href='#home' name='home'>
