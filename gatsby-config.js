@@ -4,7 +4,7 @@ if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Goods Office',
+    title: 'Goods Office - friendly neighbourhood cafe/restaurant in Stroud Green',
     navMenuTypes: [
       { link: '/', title: 'HOME' },
       { link: '/menus', title: 'MENUS' },
