@@ -10,17 +10,17 @@ const book = props => {
     <Box>
       <Layout>
         <Header />
-        <Box maxWidth={1200} p={3} my={3}>
-          <Flex justifyContent='center'>
-            <Box width={[1, 0.7, 0.5]}>
-              <Text fontSize={3} textAlign='center'>
-                Call us on <a href='tel:02083407677'>02083407677</a> or {` `}
-                <a href='mailto:admin@goodsoffice.co.uk'>email us</a> on
-                admin@goodsoffice.co.uk to book
-              </Text>
-            </Box>
-          </Flex>
-        </Box>
+        <Flex justifyContent='center'>
+          <Box maxWidth={1200} p={3} my={3}>
+              <Box width={[1, 0.7, 0.5]}>
+                <Text fontSize={3} textAlign='center'>
+                  Call us on <a href='tel:02083407677'>02083407677</a> or {` `}
+                  <a href='mailto:admin@goodsoffice.co.uk'>email us</a> on
+                  admin@goodsoffice.co.uk to book
+                </Text>
+              </Box>
+          </Box>
+        </Flex>
       </Layout>
     </Box>
   )
