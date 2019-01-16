@@ -27,8 +27,10 @@ const ContactDetails = () => (
         HOURS
       </Text>
     </Box>
-    <Text fontSize={14}>Mon-Sun</Text>
-    <Text fontSize={14}>8:00 am - 11:30 pm</Text>
+    <Text fontSize={14}>Mon - Friday</Text>
+    <Text fontSize={14}>8am - 11pm</Text>
+    <Text fontSize={14}>Saturday & Sunday</Text>
+    <Text fontSize={14}>9am - 11pm</Text> 
   </Fragment>
 )
 
