@@ -12,6 +12,7 @@ const book = props => {
         <Header />
         <Flex justifyContent='center'>
           <Box maxWidth={1200} p={3} my={3}>
+              <Flex justifyContent='center'>
               <Box width={[1, 0.7, 0.5]}>
                 <Text fontSize={3} textAlign='center'>
                   Call us on <a href='tel:02083407677'>02083407677</a> or {` `}
@@ -19,6 +20,7 @@ const book = props => {
                   admin@goodsoffice.co.uk to book
                 </Text>
               </Box>
+    </Flex>
           </Box>
         </Flex>
       </Layout>
