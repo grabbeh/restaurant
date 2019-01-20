@@ -1,9 +1,9 @@
 import React from 'react'
-import Box from '../components/Box'
-import Text from '../components/Text'
-import { Flex } from '../components/Flex'
-import Button from '../components/Button'
-import Img from '../components/ImagePolyfill'
+import Box from './Box'
+import Text from './Text'
+import { Flex } from './Flex'
+import Button from './Button'
+import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 
 const Event = ({ event }) => {

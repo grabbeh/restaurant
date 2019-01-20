@@ -1,4 +1,7 @@
+// require('@babel/polyfill')
+
 exports.onClientEntry = () => {
+  /*
   // IntersectionObserver polyfill for gatsby-image (Safari, IE)
   if (typeof window.IntersectionObserver === `undefined`) {
     import(`intersection-observer`)
@@ -13,5 +16,5 @@ exports.onClientEntry = () => {
   ) {
     import(`object-fit-images`)()
     console.log(`👍 Object-fit/Object-position are polyfilled`)
-  }
+  } */
 }

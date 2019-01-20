@@ -14,28 +14,13 @@ import {
   borderColor
 } from 'styled-system'
 import * as React from 'react'
-import posed from 'react-pose'
 import PropTypes from 'prop-types'
 import theme from '../theme'
 
-const StyledButton = styled(
-  posed.button({
-    pressable: true,
-    hoverable: true,
-    init: {
-      y: 0,
-      x: 0,
-      boxShadow: '-5px 5px 0px 0px rgba(0,0,0,1)'
-    },
-    hover: {
-      y: -2,
-      boxShadow: '-5px 5px 0px 0px rgba(0,0,0,1)'
-    },
-    press: { boxShadow: '-0px 0px 0px 0px rgba(0,0,0,1)', y: 2, x: -2 }
-  })
-)`
+const StyledButton = styled('button')`
   outline: 1px solid transparent;
   cursor: pointer;
+  box-shadow: -5px 5px 0px 0px rgba(0,0,0,1);
   ${space} 
   ${width} 
   ${fontSize} 

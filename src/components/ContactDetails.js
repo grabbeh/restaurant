@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import Box from '../components/Box'
-import Text from '../components/Text'
+import Box from './Box'
+import Text from './Text'
 
 const ContactDetails = () => (
   <Fragment>

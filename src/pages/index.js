@@ -5,8 +5,8 @@ import Button from '../components/Button'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
 import Layout from '../components/Layout'
-import Img from '../components/ImagePolyfill'
-import Header from '../components/Header'
+import Img from 'gatsby-image'
+
 import ContactDetails from '../components/ContactDetails'
 
 class Home extends Component {
@@ -15,7 +15,6 @@ class Home extends Component {
     let { headerImage, restaurantDescription } = node
     return (
       <Layout>
-        <Header />
         <Box>
           <Flex justifyContent='center'>
             <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>

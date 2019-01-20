@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import Header from '../components/Header'
 import Box from '../components/Box'
 import Text from '../components/Text'
 import { Flex } from '../components/Flex'
@@ -12,7 +11,6 @@ const events = props => {
   return (
     <Box>
       <Layout>
-        <Header />
         <Box>
           <Flex justifyContent='center'>
             <Box p={3} width={[1, 0.7, 0.5]} zIndex={1}>

@@ -1,11 +1,11 @@
 import React from 'react'
 import Box from './Box'
 import { Flex } from './Flex'
-import Text from '../components/Text'
+import Text from './Text'
 import { FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa'
 import { Link } from 'gatsby'
-import ExternalLink from '../components/Link'
-import Span from '../components/Span'
+import ExternalLink from './Link'
+import Span from './Span'
 
 const Footer = () => (
   <Box zIndex={5} width={1} className='footer' bg='petrol'>

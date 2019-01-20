@@ -5,7 +5,6 @@ import Button from '../components/Button'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
 import Layout from '../components/Layout'
-import Header from '../components/Header'
 import ExternalLink from '../components/Link'
 import Image from '../components/Image'
 import ContactDetails from '../components/ContactDetails'
@@ -18,7 +17,6 @@ const findUs = () => {
     "https://www.google.co.uk/maps/dir//''/@51.5735535,-0.1299459,14z/data=!4m9!4m8!1m0!1m5!1m1!1s0x48761b26736b201b:0x51354017450282c6!2m2!1d-0.112436!2d51.5735877!3e0"
   return (
     <Layout>
-      <Header />
       <Box>
         <Flex justifyContent='center'>
           <Box px={3} pt={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>

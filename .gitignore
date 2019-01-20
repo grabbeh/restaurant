@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -69,15 +68,3 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-=======
-# Project dependencies
-.cache
-node_modules
-yarn-error.log
-
-# Build directory
-/public
-config
-.cache
-.DS_Store
->>>>>>> e0bb03511d6e3d58d6c20790b7efd5e5a3756501

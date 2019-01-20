@@ -1,10 +1,11 @@
-if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-  require('dotenv').config({ path: './config/keys.env' })
-}
+// if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
+require('dotenv').config({ path: './config/keys.env' })
+// }
 
 module.exports = {
   siteMetadata: {
-    title: 'Goods Office - friendly neighbourhood cafe/restaurant in Stroud Green',
+    title:
+      'Goods Office - friendly neighbourhood cafe/restaurant in Stroud Green',
     navMenuTypes: [
       { link: '/', title: 'HOME' },
       { link: '/menus', title: 'MENUS' },
@@ -13,15 +14,28 @@ module.exports = {
       { link: '/find-us', title: 'FIND US' }
     ]
   },
+
   plugins: [
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
-    `gatsby-plugin-favicon`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `${process.env.SPACE_ID}`,
         accessToken: `${process.env.ACCESS_TOKEN}`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: './src/images/favicon.png'
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`
       }
     },
     {

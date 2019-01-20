@@ -4,15 +4,13 @@ import Layout from '../components/Layout'
 import Box from '../components/Box'
 import { Flex } from '../components/Flex'
 import Text from '../components/Text'
-import Header from '../components/Header'
 import Link from '../components/Link'
 
 const evening = props => {
   let { menus } = props.data.allContentfulMenuHolder.edges[0].node
   return (
     <Layout>
-      <Header />
-      <Box p={[1,3]}>
+      <Box p={[1, 3]}>
         <Flex justifyContent='center'>
           <Box width={[1, 0.8]} zIndex={1}>
             <a href='#home' name='home'>
@@ -56,7 +54,15 @@ const evening = props => {
         transform={2}
         position='absolute'
       />
-      <Box bg='petrol' position='fixed' bottom={0} right={0} px={3} py={2} zIndex={4}>
+      <Box
+        bg='petrol'
+        position='fixed'
+        bottom={0}
+        right={0}
+        px={3}
+        py={2}
+        zIndex={4}
+      >
         <Flex justifyContent='flex-end'>
           <a href='#home'>
             <Text color='white' caps fontWeight='bold'>
