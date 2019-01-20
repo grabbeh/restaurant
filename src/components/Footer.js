@@ -1,6 +1,6 @@
 import React from 'react'
 import Box from './Box'
-import { Flex } from './Flex'
+import Flex from './Flex'
 import Text from './Text'
 import { FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa'
 import { Link } from 'gatsby'

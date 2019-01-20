@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Box from '../components/Box'
 import { graphql, Link } from 'gatsby'
 import Button from '../components/Button'
-import { Flex } from '../components/Flex'
+import Flex from '../components/Flex'
 import Text from '../components/Text'
 import Layout from '../components/Layout'
 import Img from 'gatsby-image'
@@ -25,8 +25,8 @@ class Home extends Component {
           </Flex>
           <Box
             bg='go-light-peach'
-            height={450}
-            mt={-80}
+            height={600}
+            mt={-200}
             width='100%'
             transform={2}
             position='absolute'

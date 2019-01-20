@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Box from '../components/Box'
 import Text from '../components/Text'
-import { Flex } from '../components/Flex'
+import Flex from '../components/Flex'
 import { graphql } from 'gatsby'
 
 const info = props => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import { Flex } from '../components/Flex'
+import Flex from '../components/Flex'
 import Box from '../components/Box'
 import Text from '../components/Text'
 

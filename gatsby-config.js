@@ -1,6 +1,6 @@
-// if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-require('dotenv').config({ path: './config/keys.env' })
-// }
+if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
+  require('dotenv').config({ path: './config/keys.env' })
+}
 
 module.exports = {
   siteMetadata: {

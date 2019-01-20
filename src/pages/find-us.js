@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '../components/Box'
 import { Link } from 'gatsby'
 import Button from '../components/Button'
-import { Flex } from '../components/Flex'
+import Flex from '../components/Flex'
 import Text from '../components/Text'
 import Layout from '../components/Layout'
 import ExternalLink from '../components/Link'
@@ -18,6 +18,14 @@ const findUs = () => {
   return (
     <Layout>
       <Box>
+        <Box
+          bg='go-light-peach'
+          height={500}
+          mt={300}
+          width='100%'
+          transform={2}
+          position='absolute'
+        />
         <Flex justifyContent='center'>
           <Box px={3} pt={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
             <Image src={mapUrl} />
@@ -33,14 +41,7 @@ const findUs = () => {
             </Flex>
           </Box>
         </Flex>
-        <Box
-          bg='go-light-peach'
-          height={500}
-          mt={-100}
-          width='100%'
-          transform={2}
-          position='absolute'
-        />
+
         <Box position='relative'>
           <Box p={3}>
             <Flex justifyContent='center'>

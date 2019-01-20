@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from './Box'
 import Text from './Text'
-import { Flex } from './Flex'
+import Flex from './Flex'
 import Button from './Button'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'

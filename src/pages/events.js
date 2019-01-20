@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Box from '../components/Box'
 import Text from '../components/Text'
-import { Flex } from '../components/Flex'
+import Flex from '../components/Flex'
 import Event from '../components/Event'
 import { graphql } from 'gatsby'
 
@@ -25,15 +25,15 @@ const events = props => {
                 ))}
               </Box>
             </Box>
-            <Box
-              bg='go-light-peach'
-              height={400}
-              mt={300}
-              width='100%'
-              transform={2}
-              position='absolute'
-            />
           </Flex>
+          <Box
+            bg='go-light-peach'
+            height={600}
+            mt={-700}
+            width='100%'
+            transform={2}
+            position='absolute'
+          />
         </Box>
       </Layout>
     </Box>

@@ -2,6 +2,9 @@
 
 exports.onClientEntry = () => {
   /*
+
+  // Suggested work around where normal polyfill not working
+  // Now redundant though
   // IntersectionObserver polyfill for gatsby-image (Safari, IE)
   if (typeof window.IntersectionObserver === `undefined`) {
     import(`intersection-observer`)

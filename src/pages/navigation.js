@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Box from '../components/Box'
-import { Flex } from '../components/Flex'
+import Flex from '../components/Flex'
 import Button from '../components/Button'
 import Text from '../components/Text'
 import { Link, graphql, StaticQuery } from 'gatsby'

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Box from '../components/Box'
-import { Flex } from '../components/Flex'
+import Flex from '../components/Flex'
 import Text from '../components/Text'
 import Link from '../components/Link'
 
@@ -10,7 +10,7 @@ const evening = props => {
   let { menus } = props.data.allContentfulMenuHolder.edges[0].node
   return (
     <Layout>
-      <Box p={[1, 3]}>
+      <Box>
         <Flex justifyContent='center'>
           <Box width={[1, 0.8]} zIndex={1}>
             <a href='#home' name='home'>
@@ -24,36 +24,36 @@ const evening = props => {
                 <MenuList menus={menus} />
               </Flex>
             </Box>
-            <Box>
-              {menus.map(m => {
-                let {
-                  link,
-                  name,
-                  fullMenu: {
-                    childMarkdownRemark: { html }
-                  }
-                } = m
-                return (
-                  <Box key={m.name}>
-                    <Link href={`#${link}`} name={link}>
-                      <div id={link} />
-                    </Link>
-                    <MarkDownMenu title={name} html={html} />
-                  </Box>
-                )
-              })}
-            </Box>
           </Box>
         </Flex>
+        <Box
+          bg='go-light-peach'
+          height={600}
+          mt={200}
+          width='100%'
+          transform={2}
+          position='absolute'
+        />
+        <Box position='relative'>
+          {menus.map(m => {
+            let {
+              link,
+              name,
+              fullMenu: {
+                childMarkdownRemark: { html }
+              }
+            } = m
+            return (
+              <Box key={m.name}>
+                <Link href={`#${link}`} name={link}>
+                  <div id={link} />
+                </Link>
+                <MarkDownMenu title={name} html={html} />
+              </Box>
+            )
+          })}
+        </Box>
       </Box>
-      <Box
-        bg='go-light-peach'
-        height={500}
-        mt={500}
-        width='100%'
-        transform={2}
-        position='absolute'
-      />
       <Box
         bg='petrol'
         position='fixed'
