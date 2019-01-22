@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Box from '../components/Box'
 import { graphql, Link } from 'gatsby'
 import Button from '../components/Button'
@@ -8,9 +8,8 @@ import Layout from '../components/Layout'
 import Img from 'gatsby-image'
 import ContactDetails from '../components/ContactDetails'
 
-class Home extends Component {
-  render () {
-    let { node } = this.props.data.allContentfulHomePage.edges[0]
+const Home = (props) => {
+    let { node } = props.data.allContentfulHomePage.edges[0]
     let { headerImage, restaurantDescription, headerLink } = node
     return (
       <Layout>
@@ -86,7 +85,7 @@ class Home extends Component {
       </Layout>
     )
   }
-}
+
 
 export default Home
 
