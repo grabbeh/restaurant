@@ -94,6 +94,7 @@ export const query = graphql`
     allContentfulHomePage {
       edges {
         node {
+          headerLink
           restaurantDescription {
             childMarkdownRemark {
               html
