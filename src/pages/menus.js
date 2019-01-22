@@ -12,7 +12,7 @@ const evening = props => {
     <Layout>
       <Box>
         <Flex justifyContent='center'>
-          <Box width={[1, 0.8]} zIndex={1}>
+          <Box mt={3} width={[1, 0.8]} zIndex={1}>
             <a href='#home' name='home'>
               <div id='home' />
               <Text textAlign='center' caps fontWeight='bold' fontSize={3}>
