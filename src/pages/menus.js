@@ -120,7 +120,7 @@ const MarkDownMenu = ({ html, title }) => {
   return (
     <MenuHolder title={title}>
       <Box
-        pb={2}
+        mb={4}
         dangerouslySetInnerHTML={{
           __html: html
         }}
