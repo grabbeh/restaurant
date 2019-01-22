@@ -19,7 +19,7 @@ class Home extends Component {
           <Flex justifyContent='center'>
             <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
               <Box width={1}>
-                { headerLink ? <Link><Img {...this.props} fluid={headerImage.fluid} /></Link> :
+                { headerLink ? <Link to={`/${headerLink}`}><Img {...this.props} fluid={headerImage.fluid} /></Link> :
                     <Img {...this.props} fluid={headerImage.fluid} />
                 }
               </Box>
