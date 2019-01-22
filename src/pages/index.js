@@ -17,8 +17,8 @@ const Home = (props) => {
           <Flex justifyContent='center'>
             <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
               <Box width={1}>
-                { headerLink ? <Link to={`/${headerLink}`}><Img {...this.props} fluid={headerImage.fluid} /></Link> :
-                    <Img {...this.props} fluid={headerImage.fluid} />
+                { headerLink ? <Link to={`/${headerLink}`}><Img {...props} fluid={headerImage.fluid} /></Link> :
+                    <Img {...props} fluid={headerImage.fluid} />
                 }
               </Box>
             </Box>
