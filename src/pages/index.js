@@ -12,14 +12,16 @@ import ContactDetails from '../components/ContactDetails'
 class Home extends Component {
   render () {
     let { node } = this.props.data.allContentfulHomePage.edges[0]
-    let { headerImage, restaurantDescription } = node
+    let { headerImage, restaurantDescription, headerLink } = node
     return (
       <Layout>
         <Box>
           <Flex justifyContent='center'>
             <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
               <Box width={1}>
-                <Img {...this.props} fluid={headerImage.fluid} />
+                { headerLink ? <Link><Img {...this.props} fluid={headerImage.fluid} /></Link> :
+                    <Img {...this.props} fluid={headerImage.fluid} />
+                }
               </Box>
             </Box>
           </Flex>
