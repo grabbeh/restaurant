@@ -19,7 +19,7 @@ const evening = props => {
                 Menus
               </Text>
             </a>
-            <Box mb={4} mt={3}>
+            <Box my={3}>
               <Flex justifyContent='center' flexWrap='wrap'>
                 <MenuList menus={menus} />
               </Flex>
@@ -34,7 +34,7 @@ const evening = props => {
           transform={2}
           position='absolute'
         />
-        <Box position='relative'>
+        <Box mb={4} position='relative'>
           {menus.map(m => {
             let {
               link,
