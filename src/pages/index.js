@@ -6,7 +6,6 @@ import Flex from '../components/Flex'
 import Text from '../components/Text'
 import Layout from '../components/Layout'
 import Img from 'gatsby-image'
-
 import ContactDetails from '../components/ContactDetails'
 
 class Home extends Component {
