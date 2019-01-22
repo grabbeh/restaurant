@@ -19,7 +19,7 @@ const evening = props => {
                 Menus
               </Text>
             </a>
-            <Box my={3}>
+            <Box mt={3}>
               <Flex justifyContent='center' flexWrap='wrap'>
                 <MenuList menus={menus} />
               </Flex>
