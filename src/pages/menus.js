@@ -103,6 +103,7 @@ const MenuList = ({ menus }) => (
       <Box
         key={m.name}
         px={3}
+        pt={2}
         borderRight='2px solid'
         borderColor='petrol'
       >
