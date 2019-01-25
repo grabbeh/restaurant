@@ -54,8 +54,6 @@ export const query = graphql`
               html
             }
           }
-          recurring
-          frequency
           eventImage {
             fluid(maxWidth: 1200) {
               ...GatsbyContentfulFluid
