@@ -29,7 +29,7 @@ const events = props => {
           <Box
             bg='go-light-peach'
             height={600}
-            mt={-700}
+            mt={-200}
             width='100%'
             transform={2}
             position='absolute'
