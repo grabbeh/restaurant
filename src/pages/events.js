@@ -26,14 +26,6 @@ const events = props => {
               </Box>
             </Box>
           </Flex>
-          <Box
-            bg='go-light-peach'
-            height={600}
-            mt={-200}
-            width='100%'
-            transform={2}
-            position='absolute'
-          />
         </Box>
       </Layout>
     </Box>
