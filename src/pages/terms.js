@@ -5,7 +5,7 @@ import Text from '../components/Text'
 import Flex from '../components/Flex'
 import { graphql } from 'gatsby'
 
-const info = props => {
+const terms = props => {
   let terms = props.data.allContentfulTermsOfUse.edges[0].node
   return (
     <Box>
@@ -28,7 +28,7 @@ const info = props => {
   )
 }
 
-export default info
+export default terms
 
 export const query = graphql`
   {

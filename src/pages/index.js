@@ -8,84 +8,87 @@ import Layout from '../components/Layout'
 import Img from 'gatsby-image'
 import ContactDetails from '../components/ContactDetails'
 
-const Home = (props) => {
-    let { node } = props.data.allContentfulHomePage.edges[0]
-    let { headerImage, restaurantDescription, headerLink } = node
-    return (
-      <Layout>
-        <Box>
-          <Flex justifyContent='center'>
-            <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
-              <Box width={1}>
-                { headerLink ? <Link to={`/${headerLink}`}><Img {...props} fluid={headerImage.fluid} /></Link> :
-                    <Img {...props} fluid={headerImage.fluid} />
-                }
-              </Box>
+const Home = props => {
+  let { node } = props.data.allContentfulHomePage.edges[0]
+  let { headerImage, restaurantDescription, headerLink } = node
+  return (
+    <Layout>
+      <Box>
+        <Flex justifyContent='center'>
+          <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
+            <Box width={1}>
+              {headerLink ? (
+                <Link to={`/${headerLink}`}>
+                  <Img {...props} fluid={headerImage.fluid} />
+                </Link>
+              ) : (
+                <Img {...props} fluid={headerImage.fluid} />
+              )}
             </Box>
-          </Flex>
-          <Box
-            bg='go-light-peach'
-            height={600}
-            mt={-200}
-            width='100%'
-            transform={2}
-            position='absolute'
-          />
-          <Box position='relative'>
-            <Box p={3}>
-              <Flex justifyContent='center'>
-                <Box maxWidth={1200} width={[1, 0.7, 0.5]} mx={4}>
-                  <Box>
-                    <Flex flexWrap='wrap' justifyContent='space-between'>
-                      <Box maxWidth={1200} width={[1, 0.8, 0.7]}>
-                        <Box mt={-30}>
-                          <Text
-                            fontWeight='bold'
-                            fontSize={4}
-                            dangerouslySetInnerHTML={{
-                              __html:
-                                restaurantDescription.childMarkdownRemark.html
-                            }}
-                          />
-                        </Box>
-                        <Box mt={3}>
-                          <Box width={130} mt={3}>
-                            <Link to='/menus'>
-                              <Button bg='go-light-peach'>
-                                <Text color='petrol'>MENUS</Text>
-                              </Button>
-                            </Link>
-                          </Box>
+          </Box>
+        </Flex>
+        <Box
+          bg='go-light-peach'
+          height={450}
+          mt={-80}
+          width='100%'
+          transform={2}
+          position='absolute'
+        />
+        <Box position='relative'>
+          <Box p={3}>
+            <Flex justifyContent='center'>
+              <Box maxWidth={1200} width={[1, 0.7, 0.5]} mx={4}>
+                <Box>
+                  <Flex flexWrap='wrap' justifyContent='space-between'>
+                    <Box maxWidth={1200} width={[1, 0.8, 0.7]}>
+                      <Box mt={-30}>
+                        <Text
+                          fontWeight='bold'
+                          fontSize={4}
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              restaurantDescription.childMarkdownRemark.html
+                          }}
+                        />
+                      </Box>
+                      <Box mt={3}>
+                        <Box width={130} mt={3}>
+                          <Link to='/menus'>
+                            <Button bg='go-light-peach'>
+                              <Text color='petrol'>MENUS</Text>
+                            </Button>
+                          </Link>
                         </Box>
                       </Box>
-                      <Box width={[1, 0.8, 0.25]} mt={[4, 4, 0]}>
-                        <ContactDetails />
-                      </Box>
-                    </Flex>
-                  </Box>
-                  <Flex justifyContent='space-around'>
-                    <Box mt={4}>
-                      <Link to='/book'>
-                        <Button>BOOK</Button>
-                      </Link>
+                    </Box>
+                    <Box width={[1, 0.8, 0.25]} mt={[4, 4, 0]}>
+                      <ContactDetails />
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
-            </Box>
+                <Flex justifyContent='space-around'>
+                  <Box mt={4}>
+                    <Link to='/book'>
+                      <Button>BOOK</Button>
+                    </Link>
+                  </Box>
+                </Flex>
+              </Box>
+            </Flex>
           </Box>
-          <Flex justifyContent='center'>
-            <Box p={3} mb={3} zIndex={2}>
-              <Text textAlign='center' fontWeight='bold'>
-                Reservations required for parties of 6 or more
-              </Text>
-            </Box>
-          </Flex>
         </Box>
-      </Layout>
-    )
-  }
-
+        <Flex justifyContent='center'>
+          <Box p={3} mb={3} zIndex={2}>
+            <Text textAlign='center' fontWeight='bold'>
+              Reservations required for parties of 6 or more
+            </Text>
+          </Box>
+        </Flex>
+      </Box>
+    </Layout>
+  )
+}
 
 export default Home
 

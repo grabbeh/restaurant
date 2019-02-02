@@ -47,16 +47,16 @@ const skew = style({
   // add a fallback scale object or array, if theme is not present
   scale: [10, 20, 30, 40, 50, 60, 70, 80]
 })
-
+/*
 const boxShadow = style({
   prop: 'boxShadow',
   cssProperty: 'boxShadow',
   key: 'boxShadow'
-})
-/*
+}) */
+
 const boxShadow = props => ({
   boxShadow: `${props.theme.boxShadow[props.boxShadow]}`
-}) */
+})
 
 const StyledBox = styled.div`
   transform-origin: 0;
