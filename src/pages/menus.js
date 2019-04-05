@@ -29,7 +29,7 @@ const evening = props => {
         <Box
           bg='go-light-peach'
           height={600}
-          mt={200}
+          mt={350}
           width='100%'
           transform={2}
           position='absolute'
