@@ -5,9 +5,20 @@ import Text from '../components/Text'
 import Flex from '../components/Flex'
 import Event from '../components/Event'
 import { graphql } from 'gatsby'
+import dayjs from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+dayjs.extend(customParseFormat)
 
-const events = props => {
-  let { edges } = props.data.allContentfulEvent
+const events = ({
+  data: {
+    allContentfulEvent: { edges }
+  }
+}) => {
+  let events = edges.filter(e => {
+    let yesterday = dayjs().subtract(1, 'day')
+    let eventDate = dayjs(e.node.date, 'MMMM Do, YYYY, h:mm a')
+    return dayjs(eventDate).isAfter(yesterday)
+  })
   return (
     <Box>
       <Layout>
@@ -20,7 +31,7 @@ const events = props => {
                 </Text>
               </Box>
               <Box position='relative'>
-                {edges.map(({ node }) => (
+                {events.map(({ node }) => (
                   <Event key={node.id} event={node} />
                 ))}
               </Box>
