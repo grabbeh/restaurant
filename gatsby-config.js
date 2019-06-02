@@ -10,6 +10,7 @@ module.exports = {
       { link: '/', title: 'HOME' },
       { link: '/menus', title: 'MENUS' },
       { link: '/events', title: 'EVENTS' },
+   //   { link: '/gallery', title: 'GALLERY' },
       { link: '/info', title: 'INFO' },
       { link: '/find-us', title: 'FIND US' }
     ]
