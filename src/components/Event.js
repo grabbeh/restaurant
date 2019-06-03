@@ -35,12 +35,12 @@ const EventWithImage = props => (
 const EventText = ({ name, date, description }) => (
   <Box>
     <Box mb={3}>
-      <Text fontSize={3} fontWeight='bold' caps>
+      <Text fontSize={3} caps fontWeight='bold'>
         {name}
       </Text>
     </Box>
     <Box mb={3}>
-      <Text fontSize={2} fontWeight='bold' caps>
+      <Text fontSize={2} caps fontWeight='bold'>
         {date}
       </Text>
     </Box>
@@ -55,9 +55,7 @@ const EventText = ({ name, date, description }) => (
     <Box width={130} my={3}>
       <Link to='/book'>
         <Button bg='go-light-peach'>
-          <Text fontWeight='bold' caps>
-            Book now
-          </Text>
+          <Text fontWeight='bold'>BOOK NOW</Text>
         </Button>
       </Link>
     </Box>

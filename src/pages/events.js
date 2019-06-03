@@ -26,8 +26,8 @@ const events = ({
           <Flex justifyContent='center'>
             <Box p={3} width={[1, 0.7, 0.5]} zIndex={1}>
               <Box mb={2}>
-                <Text fontSize={3} caps fontWeight='bold' textAlign='center'>
-                  What's on
+                <Text fontSize={3} fontWeight='bold' textAlign='center'>
+                  WHAT'S ON
                 </Text>
               </Box>
               <Box position='relative'>

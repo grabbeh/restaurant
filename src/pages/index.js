@@ -30,9 +30,9 @@ const Home = props => {
         <Box
           bg='go-light-peach'
           height={450}
-          mt={-80}
+          mt={-300}
           width='100%'
-          transform={2}
+          transform={15}
           position='absolute'
         />
         <Box position='relative'>

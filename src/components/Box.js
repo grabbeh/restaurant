@@ -1,41 +1,18 @@
 import styled from 'styled-components'
 import {
+  layout,
   space,
-  width,
-  height,
-  color,
-  fontSize,
-  fontFamily,
-  fontWeight,
-  borders,
-  borderColor,
-  borderRadius,
-  maxWidth,
-  minHeight,
-  minWidth,
-  size,
+  shadow,
   position,
-  top,
-  right,
-  bottom,
-  left,
-  zIndex,
+  color,
+  border,
+  typography,
   style
 } from 'styled-system'
 import * as React from 'react'
+import propTypes from '@styled-system/prop-types'
 import PropTypes from 'prop-types'
 import theme from '../theme'
-
-const transform = style({
-  prop: 'transform',
-  cssProperty: 'transform',
-  key: 'rotation',
-  transformValue: n => {
-    return `rotate(${n}deg)`
-  },
-  // add a fallback scale object or array, if theme is not present
-  scale: [45, 90, 120, 150]
-})
 
 const skew = style({
   prop: 'transform',
@@ -43,25 +20,23 @@ const skew = style({
   key: 'skew',
   transformValue: n => {
     return `skewY(-${n}deg)`
+  }
+})
+
+const StyledBox = styled('div')(
+  {
+    boxSizing: 'border-box',
+    transformOrigin: 0
   },
-  // add a fallback scale object or array, if theme is not present
-  scale: [10, 20, 30, 40, 50, 60, 70, 80]
-})
-/*
-const boxShadow = style({
-  prop: 'boxShadow',
-  cssProperty: 'boxShadow',
-  key: 'boxShadow'
-}) */
-
-const boxShadow = props => ({
-  boxShadow: `${props.theme.boxShadow[props.boxShadow]}`
-})
-
-const StyledBox = styled.div`
-  transform-origin: 0;
-  ${boxShadow} ${borders} ${space} ${size} ${maxWidth} ${minWidth} ${minHeight} ${transform} ${skew} ${width} ${height} ${fontWeight} ${fontSize} ${fontFamily} ${color} ${borderRadius} ${position} ${top} ${bottom} ${left} ${right} ${zIndex} ${borderColor};
-`
+  space,
+  shadow,
+  skew,
+  layout,
+  typography,
+  color,
+  border,
+  position
+)
 
 // To recognise propTypes, we have to create new Box to wrap StyledBox
 const Box = props => {
@@ -81,15 +56,13 @@ Box.defaultProps = {
 }
 
 Box.propTypes = {
-  ...transform.propTypes,
   skew: PropTypes.number,
-  ...space.PropTypes,
-  ...borders.PropTypes,
-  ...color.propTypes,
-  ...width.propTypes,
-  ...fontSize.propTypes,
-  ...size.propTypes,
-  ...position.propTypes,
+  ...propTypes.space,
+  ...propTypes.border,
+  ...propTypes.color,
+  ...propTypes.typography,
+  ...propTypes.layout,
+  ...propTypes.position,
   borderColor: numberStringOrArray,
   boxShadow: numberStringOrArray,
   fontWeight: numberStringOrArray,

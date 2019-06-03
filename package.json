@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "@grabbeh",
   "dependencies": {
+    "@styled-system/prop-types": "^5.0.4",
     "dayjs": "^1.8.14",
     "gatsby": "^2.8.2",
     "gatsby-image": "^2.1.2",
@@ -16,7 +17,7 @@
     "gatsby-plugin-sharp": "^2.1.3",
     "gatsby-plugin-styled-components": "^3.0.4",
     "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-source-contentful": "^2.0.26",
+    "gatsby-source-contentful": "^2.0.67",
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.2.0",
     "gatsby-transformer-sharp": "^2.1.8",
@@ -26,7 +27,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.3.0",
     "styled-components": "^4.1.3",
-    "styled-system": "^3.2.1"
+    "styled-system": "^5.0.4"
   },
   "keywords": [
     "gatsby"

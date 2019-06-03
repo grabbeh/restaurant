@@ -23,7 +23,7 @@ const findUs = () => {
           height={500}
           mt={300}
           width='100%'
-          transform={2}
+          transform={15}
           position='absolute'
         />
         <Flex justifyContent='center'>
@@ -41,7 +41,6 @@ const findUs = () => {
             </Flex>
           </Box>
         </Flex>
-
         <Box position='relative'>
           <Box p={3}>
             <Flex justifyContent='center'>
