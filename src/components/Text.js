@@ -17,7 +17,7 @@ Text.displayName = 'Text'
 
 Text.propTypes = {
   ...propTypes.space,
-  ...propTypes.typograph,
+  ...propTypes.typography,
   color: PropTypes.string
 }
 
