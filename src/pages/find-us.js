@@ -20,7 +20,7 @@ const findUs = () => {
       <Box>
         <Box
           bg='go-light-peach'
-          height={500}
+          height={[500, 750]}
           mt={300}
           width='100%'
           transform={15}
