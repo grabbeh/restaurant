@@ -20,6 +20,7 @@ const events = ({
     let eventDate = dayjs(e.node.date, 'MMMM Do, YYYY, h:mm a')
     return dayjs(eventDate).isAfter(yesterday)
   })
+  console.log(events)
   return (
     <Box>
       <Layout>
@@ -32,7 +33,7 @@ const events = ({
                 </Text>
               </Box>
               <Box position='relative'>
-                {events ? events.map(({ node }) => (
+                {events.length > 0 ? events.map(({ node }) => (
                   <Event key={node.id} event={node} />
                 )) : "Check back later for events news" }
               </Box>
