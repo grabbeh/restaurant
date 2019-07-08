@@ -14,6 +14,7 @@ const events = ({
     allContentfulEvent: { edges }
   }
 }) => {
+  console.log(edges)
   let events = edges.filter(e => {
     let yesterday = dayjs().subtract(1, 'day')
     let eventDate = dayjs(e.node.date, 'MMMM Do, YYYY, h:mm a')
