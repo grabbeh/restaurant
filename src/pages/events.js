@@ -31,9 +31,9 @@ const events = ({
                 </Text>
               </Box>
               <Box position='relative'>
-                {events.map(({ node }) => (
+                {events ? events.map(({ node }) => (
                   <Event key={node.id} event={node} />
-                ))}
+                )) : "Check back later for events news" }
               </Box>
             </Box>
           </Flex>
