@@ -32,7 +32,7 @@ const EventWithImage = props => (
   </Box>
 )
 
-const EventText = ({ name, date, description }) => (
+const EventText = ({ name, date, description, frequency }) => (
   <Box>
     <Box mb={3}>
       <Text fontSize={3} caps fontWeight='bold'>
@@ -41,7 +41,7 @@ const EventText = ({ name, date, description }) => (
     </Box>
     <Box mb={3}>
       <Text fontSize={2} caps fontWeight='bold'>
-        {date}
+        {date || frequency}
       </Text>
     </Box>
     <Box>
