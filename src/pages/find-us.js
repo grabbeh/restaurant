@@ -18,16 +18,8 @@ const findUs = () => {
   return (
     <Layout>
       <Box>
-        <Box
-          bg='go-light-peach'
-          height={[500, 750]}
-          mt={300}
-          width='100%'
-          transform={15}
-          position='absolute'
-        />
         <Flex justifyContent='center'>
-          <Box px={3} pt={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
+          <Box px={3} pt={3} width={[1, 0.7, 0.5]} maxWidth={1200}>
             <Image src={mapUrl} />
             <Flex justifyContent='flex-end'>
               <ExternalLink href='https://www.mapbox.com/map-feedback/'>
@@ -41,7 +33,7 @@ const findUs = () => {
             </Flex>
           </Box>
         </Flex>
-        <Box position='relative'>
+        <Box>
           <Box p={3}>
             <Flex justifyContent='center'>
               <Box maxWidth={1200} width={[1, 0.7, 0.5]} mb={4}>

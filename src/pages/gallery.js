@@ -49,7 +49,7 @@ const gallery = ({
                         />
                       </Box>
                     ))
-                    : 'No images available'}
+                    : 'Sorry, no images yet! Please check back later!'}
                 </Flex>
               </Box>
             </Box>

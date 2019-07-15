@@ -15,7 +15,7 @@ const Home = props => {
     <Layout>
       <Box>
         <Flex justifyContent='center'>
-          <Box p={3} zIndex={1} width={[1, 0.7, 0.5]} maxWidth={1200}>
+          <Box p={3} width={[1, 0.7, 0.5]} maxWidth={1200}>
             <Box width={1}>
               {headerLink ? (
                 <Link to={`/${headerLink}`}>
@@ -27,15 +27,7 @@ const Home = props => {
             </Box>
           </Box>
         </Flex>
-        <Box
-          bg='go-light-peach'
-          height={450}
-          mt={-300}
-          width='100%'
-          transform={15}
-          position='absolute'
-        />
-        <Box position='relative'>
+        <Box>
           <Box p={3}>
             <Flex justifyContent='center'>
               <Box maxWidth={1200} width={[1, 0.7, 0.5]} mx={4}>

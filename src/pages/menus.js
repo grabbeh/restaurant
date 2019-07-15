@@ -26,15 +26,7 @@ const evening = props => {
             </Box>
           </Box>
         </Flex>
-        <Box
-          bg='go-light-peach'
-          height={600}
-          mt={[300, 180, 300]}
-          width='100%'
-          transform={15}
-          position='absolute'
-        />
-        <Box mb={4} position='relative'>
+        <Box mb={4}>
           {menus.map(m => {
             let {
               link,

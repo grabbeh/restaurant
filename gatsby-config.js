@@ -9,8 +9,8 @@ module.exports = {
     navMenuTypes: [
       { link: '/', title: 'HOME' },
       { link: '/menus', title: 'MENUS' },
-      { link: '/events', title: 'EVENTS' },
-   //   { link: '/gallery', title: 'GALLERY' },
+      { link: '/events', title: "WHAT'S ON" },
+      { link: '/gallery', title: 'GALLERY' },
       { link: '/info', title: 'INFO' },
       { link: '/find-us', title: 'FIND US' }
     ]

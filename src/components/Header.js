@@ -24,7 +24,7 @@ const Header = () => (
                   </Link>
                 </Box>
               </Flex>
-              <Box my={[2, 2, 0]} width={[1, 0.5]}>
+              <Box my={[2, 2, 0]} width={[1, 0.8, 0.5]}>
                 <Link to='/'>
                   <Logo />
                 </Link>

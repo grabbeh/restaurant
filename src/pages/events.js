@@ -14,17 +14,16 @@ const events = ({
     allContentfulEvent: { edges }
   }
 }) => {
-  let eventsWithoutDates = edges.filter(e => {
+  let recurring = edges.filter(e => {
     return !e.node.date
   })
-  let futureEvents = edges.filter(e => {
+  let oneOffFutureEvents = edges.filter(e => {
     let yesterday = dayjs().subtract(1, 'day')
     let eventDate = dayjs(e.node.date, 'MMMM Do, YYYY, h:mm a')
     return dayjs(eventDate).isAfter(yesterday)
   })
-  
-  let events = [...eventsWithoutDates, ...futureEvents]
-  console.log(events)
+
+  // let events = [...recurring, ...oneOffFutureEvents]
   return (
     <Box>
       <Layout>
@@ -36,11 +35,34 @@ const events = ({
                   WHAT'S ON
                 </Text>
               </Box>
-              <Box position='relative'>
-                {events.length > 0 ? events.map(({ node }) => (
-                  <Event key={node.id} event={node} />
-                )) : <Text textAlign='center'>Check back later for events news</Text> }
-              </Box>
+              <Flex flexWrap='wrap'>
+                <Box width={[1, 0.5]}>
+                  <Text textAlign='center' fontWeight='bold'>
+                    Events
+                  </Text>
+                  <Box mr={4}>
+                    {oneOffFutureEvents.length > 0 ? (
+                      oneOffFutureEvents.map(({ node }) => (
+                        <Event key={node.id} event={node} />
+                      ))
+                    ) : (
+                      <Text textAlign='center'>Check back later for news</Text>
+                    )}
+                  </Box>
+                </Box>
+                <Box width={[1, 0.5]}>
+                  <Text textAlign='center' fontWeight='bold'>
+                    All the time
+                  </Text>
+                  {recurring.length > 0 ? (
+                    recurring.map(({ node }) => (
+                      <Event key={node.id} event={node} />
+                    ))
+                  ) : (
+                    <Text textAlign='center'>Check back later for news</Text>
+                  )}
+                </Box>
+              </Flex>
             </Box>
           </Flex>
         </Box>

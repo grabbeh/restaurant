@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(162deg, hsl(0, 0%, 100%) 30%, hsl(32.30000000000001, 86.7%, 94.1%) 0%)
 }
 
 .footer {
