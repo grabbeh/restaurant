@@ -52,12 +52,13 @@ const EventText = ({ name, date, description, frequency }) => (
         }}
       />
     </Box>
+   {date &&
     <Box width={130} my={3}>
       <Link to='/book'>
         <Button bg='go-light-peach'>
           <Text fontWeight='bold'>BOOK NOW</Text>
         </Button>
       </Link>
-    </Box>
+    </Box>}
   </Box>
 )
