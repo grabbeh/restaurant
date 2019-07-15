@@ -14,13 +14,17 @@ const events = ({
     allContentfulEvent: { edges }
   }
 }) => {
-  /*
-  console.log(edges)
-  let events = edges.filter(e => {
+  let eventsWithoutDates = edges.filter(e => {
+    return !e.node.date
+  })
+  let futureEvents = edges.filter(e => {
     let yesterday = dayjs().subtract(1, 'day')
     let eventDate = dayjs(e.node.date, 'MMMM Do, YYYY, h:mm a')
     return dayjs(eventDate).isAfter(yesterday)
-  })*/
+  })
+  
+  let events = [...eventsWithoutDates, ...futureEvents]
+  console.log(events)
   return (
     <Box>
       <Layout>
@@ -33,7 +37,7 @@ const events = ({
                 </Text>
               </Box>
               <Box position='relative'>
-                {edges.length > 0 ? edges.map(({ node }) => (
+                {events.length > 0 ? events.map(({ node }) => (
                   <Event key={node.id} event={node} />
                 )) : <Text textAlign='center'>Check back later for events news</Text> }
               </Box>
