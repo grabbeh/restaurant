@@ -33,7 +33,7 @@ const events = ({
                 </Text>
               </Box>
               <Box position='relative'>
-                {edges.length > 0 ? events.map(({ node }) => (
+                {edges.length > 0 ? edges.map(({ node }) => (
                   <Event key={node.id} event={node} />
                 )) : <Text textAlign='center'>Check back later for events news</Text> }
               </Box>
