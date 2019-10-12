@@ -12,7 +12,8 @@ module.exports = {
       { link: '/events', title: "WHAT'S ON" },
       { link: '/gallery', title: 'GALLERY' },
       { link: '/info', title: 'INFO' },
-      { link: '/find-us', title: 'FIND US' }
+      { link: '/find-us', title: 'FIND US' },
+      { link: '/christmas', title: 'CHRISTMAS' }
     ]
   },
 
@@ -49,7 +50,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-netlify`
+    `gatsby-transformer-remark`
   ]
 }

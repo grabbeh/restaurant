@@ -7,7 +7,25 @@ import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import styled, { css } from 'styled-components'
 
-const gallery = ({
+export const query = graphql`
+  query {
+    allContentfulImage {
+      edges {
+        node {
+          image {
+            fluid(maxWidth: 1200) {
+              ...GatsbyContentfulFluid
+            }
+            description
+          }
+          id
+        }
+      }
+    }
+  }
+`
+
+const Gallery = ({
   data: {
     allContentfulImage: { edges }
   }
@@ -32,6 +50,7 @@ const gallery = ({
                   {edges.length > 0
                     ? edges.map(({ node: { image } }, i) => (
                       <Box
+                        mb={3}
                         width={1 / 3}
                         onClick={() => {
                           setImage(image)
@@ -60,25 +79,7 @@ const gallery = ({
   )
 }
 
-export default gallery
-
-export const query = graphql`
-  {
-    allContentfulImage {
-      edges {
-        node {
-          image {
-            fluid(maxWidth: 1200) {
-              ...GatsbyContentfulFluid
-            }
-            description
-          }
-          id
-        }
-      }
-    }
-  }
-`
+export default Gallery
 
 const ImgContainer = styled(Img)`
   ${props =>

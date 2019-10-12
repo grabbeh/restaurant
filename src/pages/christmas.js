@@ -5,19 +5,22 @@ import Text from '../components/Text'
 import Flex from '../components/Flex'
 import { graphql } from 'gatsby'
 
-const privacy = props => {
-  let policy = props.data.allContentfulPrivacyPolicy.edges[0].node
+const christmas = props => {
+  const {
+    node: { content, pageTitle }
+  } = props.data.allContentfulChristmasPage.edges[0]
   return (
     <Box>
       <Layout>
-        <Box p={3} mb={3}>
+        <Box p={3}>
           <Flex justifyContent='center'>
-            <Box width={[1, 0.7, 0.5]}>
+            <Box py={3} width={[1, 1, 0.5]}>
+              <Text fontWeight='bold' fontSize={4}>
+                {pageTitle}
+              </Text>
               <Text
-                pt={1}
-                pb={2}
                 dangerouslySetInnerHTML={{
-                  __html: policy.text.childMarkdownRemark.html
+                  __html: content.childMarkdownRemark.html
                 }}
               />
             </Box>
@@ -28,14 +31,15 @@ const privacy = props => {
   )
 }
 
-export default privacy
+export default christmas
 
 export const query = graphql`
   query {
-    allContentfulPrivacyPolicy {
+    allContentfulChristmasPage {
       edges {
         node {
-          text {
+          pageTitle
+          content {
             childMarkdownRemark {
               html
             }

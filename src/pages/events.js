@@ -46,7 +46,11 @@ const events = ({
                         <Event key={node.id} event={node} />
                       ))
                     ) : (
-                      <Text textAlign='center'>Check back later for news</Text>
+                      <Box mt={3}>
+                        <Text textAlign='center'>
+                          Check back later for news
+                        </Text>
+                      </Box>
                     )}
                   </Box>
                 </Box>
@@ -74,7 +78,7 @@ const events = ({
 export default events
 
 export const query = graphql`
-  {
+  query {
     allContentfulEvent(sort: { fields: [date], order: ASC }) {
       edges {
         node {

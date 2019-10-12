@@ -70,7 +70,7 @@ const evening = props => {
 export default evening
 
 export const query = graphql`
-  {
+  query {
     allContentfulMenuHolder {
       edges {
         node {

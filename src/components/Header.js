@@ -13,7 +13,7 @@ const Header = () => (
     <Box>
       <Box zIndex={1}>
         <Flex justifyContent='center'>
-          <Box p={3} width={[1, 0.7]} maxWidth={1200} mt={[3, 4, 4]}>
+          <Box p={3} width={[1, 1, 0.7]} maxWidth={1200} mt={[3, 4, 4]}>
             <Flex justifyContent='space-between' flexWrap='wrap'>
               <Flex alignItems='center'>
                 <Box mr={[20, 50, 100]}>

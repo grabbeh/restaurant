@@ -31,7 +31,7 @@ const info = props => {
 export default info
 
 export const query = graphql`
-  {
+  query {
     allContentfulInfoPage {
       edges {
         node {

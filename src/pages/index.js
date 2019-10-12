@@ -85,7 +85,7 @@ const Home = props => {
 export default Home
 
 export const query = graphql`
-  {
+  query {
     allContentfulHomePage {
       edges {
         node {

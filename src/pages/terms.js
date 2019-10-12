@@ -31,7 +31,7 @@ const terms = props => {
 export default terms
 
 export const query = graphql`
-  {
+  query {
     allContentfulTermsOfUse {
       edges {
         node {

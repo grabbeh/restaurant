@@ -12,7 +12,7 @@ const Footer = () => (
       <Flex justifyContent='space-between' flexWrap='wrap'>
         <Text.span color='white'>
           <Text.span mr={3}>
-            <ExternalLink href='https://instagram.com'>
+            <ExternalLink href='https://www.instagram.com/thegoodsoffice/'>
               <FaInstagram style={{ color: 'white' }} size={20} />
             </ExternalLink>
           </Text.span>
