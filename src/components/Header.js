@@ -31,7 +31,7 @@ const Header = () => (
               </Box>
               <Flex alignItems='center'>
                 <Box mt={[2, 2, 0]}>
-                  <Link to='book'>
+                  <Link to='/book'>
                     <Button>BOOK</Button>
                   </Link>
                 </Box>

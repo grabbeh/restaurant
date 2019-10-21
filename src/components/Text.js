@@ -22,7 +22,7 @@ Text.propTypes = {
 }
 
 Text.defaultProps = {
-  theme: theme,
+  theme,
   color: 'petrol'
 }
 

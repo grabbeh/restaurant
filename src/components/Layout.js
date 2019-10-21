@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Footer from './Footer'
 import Box from './Box'
 import Header from './Header'
+import { ThemeProvider } from 'styled-components'
+import theme from '../theme.js'
 import '../index.css'
 
 const Layout = props => {
@@ -20,7 +22,7 @@ const Layout = props => {
       `}
       render={data => {
         return (
-          <Fragment>
+          <ThemeProvider theme={theme}>
             <Helmet
               title={data.site.siteMetadata.title}
               meta={[
@@ -52,7 +54,7 @@ const Layout = props => {
               {props.children}
             </Box>
             <Footer />
-          </Fragment>
+          </ThemeProvider>
         )
       }}
     />

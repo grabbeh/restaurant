@@ -18,6 +18,7 @@ module.exports = {
   },
 
   plugins: [
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     {
