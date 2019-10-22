@@ -15,7 +15,9 @@ body {
 
 a {
  outline: 0; 
+ color: #31505F;
 }
+
 
 ul {
   padding: 0;
