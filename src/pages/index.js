@@ -13,9 +13,9 @@ const Home = props => {
   let { headerImage, restaurantDescription, headerLink } = node
   return (
     <Layout>
-      <Box>
-        <Flex justifyContent='center'>
-          <Box p={3} width={[1, 0.7, 0.5]} maxWidth={1200}>
+      <Flex justifyContent='center'>
+        <Box width={1} maxWidth={700}>
+          <Box p={3}>
             <Box width={1}>
               {headerLink ? (
                 <Link to={`/${headerLink}`}>
@@ -26,15 +26,13 @@ const Home = props => {
               )}
             </Box>
           </Box>
-        </Flex>
-        <Box>
-          <Box p={3}>
-            <Flex justifyContent='center'>
-              <Box maxWidth={1200} width={[1, 0.7, 0.5]} mx={4}>
+          <Box>
+            <Box p={3}>
+              <Box>
                 <Box>
-                  <Flex flexWrap='wrap' justifyContent='space-between'>
-                    <Box maxWidth={1200} width={[1, 0.8, 0.7]}>
-                      <Box mt={-30}>
+                  <Flex flexWrap='wrap'>
+                    <Box width={[1, 1, 2 / 3]}>
+                      <Box mr={[0, 0, 3]} mt={-30}>
                         <Text
                           fontWeight='bold'
                           fontSize={4}
@@ -54,12 +52,12 @@ const Home = props => {
                         </Box>
                       </Box>
                     </Box>
-                    <Box width={[1, 0.8, 0.25]} mt={[4, 4, 0]}>
+                    <Box width={[1, 1, 1 / 3]} mt={[4, 4, 0]}>
                       <ContactDetails />
                     </Box>
                   </Flex>
                 </Box>
-                <Flex justifyContent='space-around'>
+                <Flex justifyContent='center'>
                   <Box mt={4}>
                     <Link to='/book'>
                       <Button>BOOK</Button>
@@ -67,17 +65,17 @@ const Home = props => {
                   </Box>
                 </Flex>
               </Box>
-            </Flex>
+            </Box>
           </Box>
+          <Flex justifyContent='center'>
+            <Box p={3} mb={3} zIndex={2}>
+              <Text textAlign='center' fontWeight='bold'>
+                Reservations required for parties of 6 or more
+              </Text>
+            </Box>
+          </Flex>
         </Box>
-        <Flex justifyContent='center'>
-          <Box p={3} mb={3} zIndex={2}>
-            <Text textAlign='center' fontWeight='bold'>
-              Reservations required for parties of 6 or more
-            </Text>
-          </Box>
-        </Flex>
-      </Box>
+      </Flex>
     </Layout>
   )
 }

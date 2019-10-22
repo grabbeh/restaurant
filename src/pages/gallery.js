@@ -36,7 +36,7 @@ const Gallery = ({
       <Layout>
         <Box>
           <Flex justifyContent='center'>
-            <Box p={3} width={[1, 0.7, 0.5]} zIndex={1}>
+            <Box p={3} width={1} maxWidth={700} zIndex={1}>
               <Box mb={2}>
                 <Text fontSize={3} caps fontWeight='bold' textAlign='center'>
                   Gallery
