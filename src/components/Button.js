@@ -1,40 +1,29 @@
 import styled from 'styled-components'
 import {
   space,
-  width,
+  border,
   color,
-  fontWeight,
-  fontSize,
-  borderRadius,
-  borders,
-  borderBottom,
-  borderLeft,
-  borderTop,
-  borderRight,
-  borderColor
+  typography,
+  position,
+  layout
 } from 'styled-system'
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import theme from '../theme'
 
-const StyledButton = styled('button')`
-  outline: 1px solid transparent;
-  cursor: pointer;
-  box-shadow: -5px 5px 0px 0px rgba(0,0,0,1);
-  ${space} 
-  ${width} 
-  ${fontSize} 
-  ${color} 
-  ${fontWeight} 
-  ${borderRadius} 
-  ${borders}   
-  ${borders}
-  ${borderBottom}
-  ${borderTop}
-  ${borderLeft}
-  ${borderRight}
-  ${borderColor}
-`
+const StyledButton = styled('button')(
+  {
+    outline: '1px solid transparent',
+    cursor: 'pointer',
+    boxShadow: '-5px 5px 0px 0px rgba(0,0,0,1)'
+  },
+  color,
+  typography,
+  space,
+  border,
+  position,
+  layout
+)
 
 const Button = ({ children, ...props }) => (
   <StyledButton {...props}>{children}</StyledButton>

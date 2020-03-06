@@ -15,7 +15,7 @@ const evening = props => {
           <Box mt={3} width={[1, 0.8]} zIndex={1}>
             <a href='#home' name='home'>
               <div id='home' />
-              <Text textAlign='center' caps fontWeight='bold' fontSize={3}>
+              <Text textAlign='center' caps fontWeight='bold' fontSize={4}>
                 Menus
               </Text>
             </a>

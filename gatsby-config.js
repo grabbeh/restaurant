@@ -5,16 +5,7 @@ if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
 module.exports = {
   siteMetadata: {
     title:
-      'Goods Office - friendly neighbourhood cafe/restaurant in Stroud Green',
-    navMenuTypes: [
-      { link: '/', title: 'HOME' },
-      { link: '/menus', title: 'MENUS' },
-      { link: '/events', title: "WHAT'S ON" },
-      { link: '/gallery', title: 'GALLERY' },
-      { link: '/info', title: 'INFO' },
-      { link: '/find-us', title: 'FIND US' },
-      { link: '/christmas', title: 'CHRISTMAS' }
-    ]
+      'Goods Office - friendly neighbourhood cafe/restaurant in Stroud Green'
   },
 
   plugins: [

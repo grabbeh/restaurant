@@ -38,7 +38,7 @@ const Gallery = ({
           <Flex justifyContent='center'>
             <Box p={3} width={1} maxWidth={700} zIndex={1}>
               <Box mb={2}>
-                <Text fontSize={3} caps fontWeight='bold' textAlign='center'>
+                <Text fontSize={4} caps fontWeight='bold' textAlign='center'>
                   Gallery
                 </Text>
               </Box>
@@ -49,25 +49,25 @@ const Gallery = ({
                 <Flex flexWrap='wrap'>
                   {edges.length > 0
                     ? edges.map(({ node: { image } }, i) => (
-                      <Box
-                        mb={3}
-                        width={1 / 3}
-                        onClick={() => {
-                          setImage(image)
-                        }}
-                      >
-                        <ImgContainer
-                          order={i + 1}
-                          alt={image.description}
-                          style={{
-                            objectFit: 'cover',
-                            height: '25vh'
+                        <Box
+                          mb={3}
+                          width={1 / 3}
+                          onClick={() => {
+                            setImage(image)
                           }}
-                          {...image}
-                          fluid={image.fluid}
-                        />
-                      </Box>
-                    ))
+                        >
+                          <ImgContainer
+                            order={i + 1}
+                            alt={image.description}
+                            style={{
+                              objectFit: 'cover',
+                              height: '25vh'
+                            }}
+                            {...image}
+                            fluid={image.fluid}
+                          />
+                        </Box>
+                      ))
                     : 'Sorry, no images yet! Please check back later!'}
                 </Flex>
               </Box>

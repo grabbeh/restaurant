@@ -31,42 +31,38 @@ const events = ({
           <Flex justifyContent='center'>
             <Box p={3} width={[1, 0.7, 0.5]} zIndex={1}>
               <Box mb={2}>
-                <Text fontSize={3} fontWeight='bold' textAlign='center'>
+                <Text fontSize={4} fontWeight='bold' textAlign='center'>
                   WHAT'S ON
                 </Text>
               </Box>
-              <Flex flexWrap='wrap'>
-                <Box width={[1, 0.5]}>
-                  <Text textAlign='center' fontWeight='bold'>
-                    Events
-                  </Text>
-                  <Box mr={4}>
-                    {oneOffFutureEvents.length > 0 ? (
-                      oneOffFutureEvents.map(({ node }) => (
-                        <Event key={node.id} event={node} />
-                      ))
-                    ) : (
-                      <Box mt={3}>
-                        <Text textAlign='center'>
-                          Check back later for news
-                        </Text>
-                      </Box>
-                    )}
-                  </Box>
-                </Box>
-                <Box width={[1, 0.5]}>
-                  <Text textAlign='center' fontWeight='bold'>
-                    All the time
-                  </Text>
-                  {recurring.length > 0 ? (
-                    recurring.map(({ node }) => (
+              <Box>
+                <Text textAlign='center' fontWeight='bold'>
+                  All the time
+                </Text>
+                {recurring.length > 0 ? (
+                  recurring.map(({ node }) => (
+                    <Event key={node.id} event={node} />
+                  ))
+                ) : (
+                  <Text textAlign='center'>Check back later for news</Text>
+                )}
+              </Box>
+              <Box mt={4}>
+                <Text textAlign='center' fontWeight='bold'>
+                  Events
+                </Text>
+                <Box mr={4}>
+                  {oneOffFutureEvents.length > 0 ? (
+                    oneOffFutureEvents.map(({ node }) => (
                       <Event key={node.id} event={node} />
                     ))
                   ) : (
-                    <Text textAlign='center'>Check back later for news</Text>
+                    <Box mt={3}>
+                      <Text textAlign='center'>Check back later for news</Text>
+                    </Box>
                   )}
                 </Box>
-              </Flex>
+              </Box>
             </Box>
           </Flex>
         </Box>
