@@ -21,24 +21,20 @@ const query = graphql`
 
 const Navigation = () => {
   const data = useStaticQuery(query)
-  console.log(data)
   return (
     <Layout bg='go-light-peach'>
       <Box py={4}>
-        {data.navItems.edges.map(({ node: { name, link } }) => {
-          console.log(name)
-          return (
-            <Flex key={name} justifyContent='center'>
-              <Box pb={4}>
-                <Link to={link}>
-                  <Button bg='go-light-peach'>
-                    <Text color='petrol'>{name.toUpperCase()}</Text>
-                  </Button>
-                </Link>
-              </Box>
-            </Flex>
-          )
-        })}
+        {data.navItems.edges.map(({ node: { name, link } }) => (
+          <Flex key={name} justifyContent='center'>
+            <Box pb={4}>
+              <Link to={link}>
+                <Button bg='go-light-peach'>
+                  <Text color='petrol'>{name.toUpperCase()}</Text>
+                </Button>
+              </Link>
+            </Box>
+          </Flex>
+        ))}
       </Box>
     </Layout>
   )
