@@ -12,7 +12,7 @@ const createLink = (str) => {
 }
 
 const query = graphql`
-    {
+    query {
       allContentfulTemplatePage {
         edges {
           node {
