@@ -18,7 +18,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   result.data.allContentfulTemplatePage.edges.forEach(({ node: { title } }) => {
     createPage({
-      path: title.toLowerCase(),
+      path: title.replace(/\s+/g, '-').toLowerCase(),
       component: path.resolve(`src/templates/page.js`),
       context: {
         title
