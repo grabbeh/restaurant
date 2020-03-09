@@ -32,7 +32,7 @@ const Navigation = () => {
   return (
     <Layout bg='go-light-peach'>
       <Box py={4}>
-        {navItems.map({ name, link }) => (
+        {navItems.map(({ name, link }) => (
           <Flex key={name} justifyContent='center'>
             <Box pb={4}>
               <Link to={link}>
