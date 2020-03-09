@@ -26,7 +26,7 @@ const query = graphql`
 const Navigation = () => {
   const data = useStaticQuery(query)
   console.log(data)
-  const dynamicPages = data.navItems.edges.map(({ node: { title } }) => title 
+  const dynamicPages = data.navItems.edges.map(({ node: { title }}) => { return title })
   const allPages = [...basePages, ...dynamicPages]
   const navItems = allPages.map(page => ({ name: page, link: createLinkpage}))
   return (
