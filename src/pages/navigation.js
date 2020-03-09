@@ -8,7 +8,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 
 const basePages = ["Find us", "Info", "Gallery", "Events", "Menus", "Home"]
 const createLink = (str) => {
-  str.replace(/\s+/g, '-').toLowerCase()
+  return str.replace(/\s+/g, '-').toLowerCase()
 }
 
 const query = graphql`
@@ -23,7 +23,7 @@ const query = graphql`
     }
   `
 
-  const Navigation = () => {
+const Navigation = () => {
   const data = useStaticQuery(query)
   console.log(data)
   const dynamicPages = data.navItems.edges.map(({ node: { title } }) => title 
