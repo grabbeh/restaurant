@@ -28,7 +28,7 @@ const Navigation = () => {
   console.log(data)
   const dynamicPages = data.navItems.edges.map(({ node: { title }}) => { return title })
   const allPages = [...basePages, ...dynamicPages]
-  const navItems = allPages.map(page => ({ name: page, link: createLinkpage}))
+  const navItems = allPages.map(page => ({ name: page, link: createLinkpage(page)}))
   return (
     <Layout bg='go-light-peach'>
       <Box py={4}>
