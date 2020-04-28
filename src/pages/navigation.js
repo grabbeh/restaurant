@@ -25,10 +25,9 @@ const query = graphql`
 
 const Navigation = () => {
   const data = useStaticQuery(query)
-  console.log(data)
-  const dynamicPages = data.navItems.edges.map(({ node: { title }}) => { return title })
-  const allPages = [...basePages, ...dynamicPages]
-  const navItems = allPages.map(page => ({ name: page, link: createLink(page)}))
+ // const dynamicPages = data.navItems.edges.map(({ node: { title }}) => { return title })
+ // const allPages = [...basePages, ...dynamicPages]
+  const navItems = basePages.map(page => ({ name: page, link: createLink(page)}))
   return (
     <Layout bg='go-light-peach'>
       <Box py={4}>
