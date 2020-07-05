@@ -6,7 +6,7 @@ import Button from '../components/Button'
 import Text from '../components/Text'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
-const basePages = ["Find us", "Info", "Gallery", "Events", "Menus", "Home"]
+const basePages = ["Find us", "Info", "Gallery", "Events", "Menus", ""]
 const createLink = (str) => {
   return str.replace(/\s+/g, '-').toLowerCase()
 }
