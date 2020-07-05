@@ -6,7 +6,7 @@ import Button from '../components/Button'
 import Text from '../components/Text'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
-const basePages = ["Find us", "Info", "Gallery", "Events", "Menus", ""]
+const basePages = ["Find us", "Info", "Gallery", "Events", "Menus"]
 const createLink = (str) => {
   return str.replace(/\s+/g, '-').toLowerCase()
 }
@@ -25,9 +25,8 @@ const query = graphql`
 
 const Navigation = () => {
   const data = useStaticQuery(query)
- // const dynamicPages = data.navItems.edges.map(({ node: { title }}) => { return title })
- // const allPages = [...basePages, ...dynamicPages]
-  const navItems = basePages.map(page => ({ name: page, link: createLink(page)}))
+  let navItems = basePages.map(page => ({ name: page, link: createLink(page)}))
+  navItems = [...navItems, { name:'Home', link: '/' }]
   return (
     <Layout bg='go-light-peach'>
       <Box py={4}>
